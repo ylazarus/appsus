@@ -1,5 +1,5 @@
 export default{
     template: `
-    <h1>Mail App</h1>
+    <h1>Keep App</h1>
     `
 }

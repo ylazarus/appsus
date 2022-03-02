@@ -6,6 +6,7 @@ const options = {
             <!-- <app-header /> -->
             <!-- <user-msg /> -->
             <router-view />
+            <!-- <app-footer /> -->
         </section>
     `,
     // components:{
