@@ -6,8 +6,7 @@ export default {
     <tr @click="emailSelected">
         <td>{{email.to}}</td>
         <td>{{email.subject}} {{email.txt}}</td>
-        <td>{{email.createdAt.toISOString().substring(0, 10)
-}}</td>
+        <td>{{email.createdAt}}</td>
     </tr>   
     `,
   methods: {
