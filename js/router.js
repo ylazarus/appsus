@@ -23,10 +23,6 @@ const routes = [
       path: "/keep",
       component: noteIndex
     },
-    // {
-    //   path: "/add",
-    //   component: addBook
-    // }
   ]
   
   export const router = VueRouter.createRouter({
