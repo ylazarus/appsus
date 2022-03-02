@@ -1,10 +1,11 @@
 import { utilService } from "../../../services/util-service.js"
 import { storageService } from "../../../services/async-storage-service.js"
 
-export const notesService  ={
+export const notesService = {
     query,
     getEmptyNote,
-    getNoteById,
+    get,
+    put,
 }
 
 const NOTES_KEY = 'notes'
@@ -15,8 +16,12 @@ function query() {
     return storageService.query(NOTES_KEY)
 }
 
-function getNoteById (noteId) {
+function get(noteId) {
     return storageService.get(NOTES_KEY, noteId)
+}
+
+function put(note) {
+    return storageService.put(NOTES_KEY, note)
 }
 
 function getEmptyNote(){

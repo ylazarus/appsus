@@ -2,10 +2,17 @@ export default {
     props: ['info'],
     template: `
     <section class="note-img">
-        <h3 class="subject" :contenteditable="isEditable" @keyup="save">{{subject}}</h3>
+        <h3 class="subject" :contenteditable="isEditable" @keyup="saveChange">{{subject}}</h3>
         <img :src="src" alt="select image">
-        <input v-if="isUpdateMode" type="text" placeholder="enter image url" v-model="src">
-        <pre>{{info}}</pre>
+        <div v-if="isUpdateMode"  class="update-note">
+            <label>
+                Enter image url: 
+                <input type="text" placeholder="enter image url" v-model="src">
+            </label>
+            <button to="/keep" @click="updateNote">Save</button>
+            <!-- <router-link to="/keep" @click="updateNote">Save</router-link> -->
+            <pre>{{info}}</pre>
+        </div>
     </section>
     `,
     data() {
@@ -20,21 +27,25 @@ export default {
         console.log(this.info);
     },
     computed: {
-        isEditable(){
+        isEditable() {
             return this.info.isUpdateMode
         }
     },
     methods: {
-        save(ev){
-            console.log(ev);
-            console.log(ev.target.className);
-            console.log(ev.target.innerText);
+        saveChange(ev) {
+            this.info[ev.target.className] = ev.target.innerText
+            console.log(this.info);
+        },
+        updateNote() {
+            this.info.isUpdateMode = false
+            this.$emit('update', {...this.info})
         }
     },
     watch: {
-        src(){
+        src() {
             this.info.image = this.src
             console.log(this.src);
+            console.log(this.info);
         }
     }
 }

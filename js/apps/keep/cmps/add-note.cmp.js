@@ -15,7 +15,7 @@ export default {
             </select>
             
         </label>
-            <component :is="selectedType" :info="noteToEdit.info"  :id="noteToEdit.id" ></component>
+            <component :is="selectedType" :info="noteToEdit.info"  :id="noteToEdit.id"  @update="saveNote"></component>
     </section>
     `,
     components: {
@@ -35,20 +35,26 @@ export default {
     created() {
         const id = this.$route.params.noteId
         if (id) {
-            notesService.getNoteById(id)
+            notesService.get(id)
                 .then(note => {
                     console.log(note);
                     this.noteToEdit = note
                     this.selectedType = note.typeNote
-                this.renderNote()})
+                    this.renderNote()
+                })
         }
     },
     methods: {
         renderNote() {
             this.noteToEdit.typeNote = this.selectedType
-            this.noteToEdit.info[this.NoteTypes[this.selectedType]] = this.NoteTypes[this.selectedType] +''
+            this.noteToEdit.info[this.NoteTypes[this.selectedType]] = this.NoteTypes[this.selectedType] + ''
             this.noteToEdit.info.isUpdateMode = true
             this.isUpdate = !this.isUpdate
+        },
+        saveNote(info) {
+            this.noteToEdit.info = info
+            notesService.put({ ...this.noteToEdit })
+            console.log(this.noteToEdit);
         }
     },
     watch: {
