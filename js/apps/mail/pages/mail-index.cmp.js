@@ -1,6 +1,5 @@
 import { mailService } from "../services/mail.service.js"
-import emailList from "../cmps/email-list.cmp.js"
-import displayedEmail from "../cmps/displayed-email.cmp.js"
+import mailList from "../cmps/mail-list.cmp.js"
 
 export default{
     template: `
@@ -18,35 +17,31 @@ export default{
                 <!-- <li>Starred</li> -->
             </ul>
         </nav>
-        <main class="email-container">
-            <h1>emails here</h1>
-            <email-list v-if="!selectedEmail" :emails="emails" @emailSelected="emailSelected"/>
-            <displayed-email v-if="selectedEmail" :currEmail="selectedEmail" />
+        <main class="mail-container">
+            <mail-list :mails="mails"
+             @mailSelected="mailSelected" />
         </main>
 
     </section>
     `,
     components: {
-        emailList,
-        displayedEmail
+        mailList,
     },
    
     data() {
         return {
-             emails: null,
-             selectedEmail: null,
+             mails: null,
+             
              filterBy: null,
 
         }
     },
     created() {
         mailService.query()
-            .then(emails => this.emails = emails)
+            .then(mails => this.mails = mails)
     },
+    
     methods: {
-        emailSelected(email){
-            this.selectedEmail = email
-
-        }
+        
     }
 }
