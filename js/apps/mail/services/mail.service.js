@@ -14,14 +14,18 @@ export const mailService = {
   query,
   deleteMail,
   get,
-  save
+  getDraft,
+  save,
+  send
 }
 
 function query() {
   return storageService.query(MAIL_KEY)
 }
 
-function deleteMail() {}
+function deleteMail(mailId) {
+  return storageService.remove(MAIL_KEY, mailId)
+}
 
 function get(mailId) {
   return storageService.get(MAIL_KEY, mailId).then((mail) => {
@@ -29,21 +33,34 @@ function get(mailId) {
   })
 }
 
+function send(mail){
+  mail.sentAt = Date.now()
+  return storageService.post(MAIL_KEY, mail)
+}
+
 function save(mail) {
-  return storageService.put(MAIL_KEY, mail);
+  return storageService.put(MAIL_KEY, mail)
 }
 
 function _setNextPrevMailId(mail) {
   return storageService.query(MAIL_KEY).then((mails) => {
     const mailIdx = mails.findIndex((currMail) => currMail.id === mail.id)
-    mail.nextMailId = mails[mailIdx + 1]
-      ? mails[mailIdx + 1].id
-      : mails[0].id
+    mail.nextMailId = mails[mailIdx + 1] ? mails[mailIdx + 1].id : mails[0].id
     mail.prevMailId = mails[mailIdx - 1]
       ? mails[mailIdx - 1].id
       : mails[mails.length - 1].id
     return mail
   })
+}
+
+function getDraft() {
+  return {
+    // id: storageService._makeId(),
+    subject: '',
+    txt: '',
+    isRead: false,
+    to: '',
+  }
 }
 
 function _createMails() {

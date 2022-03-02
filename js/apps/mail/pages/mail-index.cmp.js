@@ -8,10 +8,10 @@ export default{
     <input type="checkbox" title="Show Read/Unread" class="show-read-unread">
     <section class="main-page-container">
         <nav class="mail-nav">
-            <button>+ Compose</button>
+        <router-link to="/compose">+ Compose</router-link>
             <ul>
                 <!-- each is essentially a filter -->
-                <li>Inbox</li>
+                <li>Inbox <span>({{unreadCount}} unread)</span></li>
                 <li>Sent</li>
                 <!-- <li>Drafts</li> -->
                 <!-- <li>Starred</li> -->
@@ -36,8 +36,14 @@ export default{
 
         }
     },
-    methods: {
-        
+    computed: {
+        unreadCount(){
+            let count = 0
+            this.mails.forEach(mail => {
+                if (!mail.isRead) count++
+            });
+            return count
+        }
     },
     created() {
         mailService.query()
