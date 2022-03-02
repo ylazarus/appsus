@@ -1,6 +1,6 @@
 import noteTxt from "./note-txt.cmp.js"
 import noteTodos from "./note-todos.cmp.js"
-import noteImg from "./note-todos.cmp.js"
+import noteImg from "./note-img.cmp.js"
 import noteVideo from "./note-video.cmp.js"
 
 export default{
@@ -22,6 +22,5 @@ export default{
         }
     },
     created() {
-        console.log(this.note);
     }
 }

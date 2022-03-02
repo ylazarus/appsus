@@ -3,6 +3,9 @@ export default{
     template: `
     <section class="note-video">
         <h3>{{subject}}</h3>
+        <iframe width="150" height="100"
+            :src="src">
+        </iframe>
     </section>
     `,
     data() {

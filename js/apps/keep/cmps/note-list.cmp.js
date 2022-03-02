@@ -23,7 +23,6 @@ export default{
     created() {
         notesService.query()
         .then(notes => this.notes=notes)
-        console.log(this.notes);
 
     },
 }

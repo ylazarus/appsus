@@ -3,6 +3,7 @@ import { storageService } from "../../../services/async-storage-service.js"
 
 export const notesService  ={
     query,
+    getEmptyNote,
 }
 
 const NOTES_KEY = 'notes'
@@ -10,12 +11,26 @@ const NOTES_KEY = 'notes'
 _createNotes()
 
 function query() {
-    return storageService.get(NOTES_KEY)
+    return storageService.query(NOTES_KEY)
+}
+
+function getEmptyNote(){
+   return {
+        id: utilService.makeId(),
+        typeNote: '',
+        info: {
+            subject: '',
+            style: {
+                backGroundColor: '#ffffff'
+            },
+        },
+    }
 }
 
 function _createNotes() {
     let notes = utilService.loadFromStorage(NOTES_KEY) || []
     if (!notes || !notes.length) {
+        console.log('new');
         notes = [
             {
                 id: utilService.makeId(),
