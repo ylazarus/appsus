@@ -19,7 +19,7 @@ export default{
         </nav>
         <main class="mail-container">
             <mail-list :mails="mails"
-             @mailSelected="mailSelected" />
+              />
         </main>
 
     </section>
@@ -35,6 +35,9 @@ export default{
              filterBy: null,
 
         }
+    },
+    methods: {
+        
     },
     created() {
         mailService.query()

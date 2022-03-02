@@ -14,6 +14,7 @@ export const mailService = {
   query,
   deleteMail,
   get,
+  save
 }
 
 function query() {
@@ -24,11 +25,15 @@ function deleteMail() {}
 
 function get(mailId) {
   return storageService.get(MAIL_KEY, mailId).then((mail) => {
-    return _setNextPrevEmailId(mail)
+    return _setNextPrevMailId(mail)
   })
 }
 
-function _setNextPrevEmailId(mail) {
+function save(mail) {
+  return storageService.put(MAIL_KEY, mail);
+}
+
+function _setNextPrevMailId(mail) {
   return storageService.query(MAIL_KEY).then((mails) => {
     const mailIdx = mails.findIndex((currMail) => currMail.id === mail.id)
     mail.nextMailId = mails[mailIdx + 1]
