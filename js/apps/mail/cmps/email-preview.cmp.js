@@ -5,8 +5,8 @@ export default {
   template: `
     <tr @click="emailSelected">
         <td>{{email.to}}</td>
-        <td>{{email.subject}} {{email.txt}}</td>
-        <td>{{email.createdAt}}</td>
+        <td><span class="email-subject">{{email.subject}}</span> {{email.txt}}</td>
+        <td>{{sentAt}}</td>
     </tr>   
     `,
   methods: {
@@ -14,4 +14,10 @@ export default {
       this.$emit("emailSelected", { ...this.email })
     },
   },
+  computed: {
+      sentAt(){
+        return new Date(this.email.sentAt).toISOString().substring(0, 10)
+
+      }
+  }
 }

@@ -14,7 +14,7 @@ export default{
     },
     methods: {
         emailSelected(email){
-            console.log(email);
+            this.$emit("emailSelected", email)
         }
     }
 }
