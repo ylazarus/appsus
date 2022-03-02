@@ -2,9 +2,9 @@ export default {
     props: ['info'],
     template: `
     <section class="note-img">
-        <h3 :contenteditable="isEditable">{{subject}}</h3>
+        <h3 class="subject" :contenteditable="isEditable" @keyup="save">{{subject}}</h3>
         <img :src="src" alt="select image">
-        <input type="text" placeholder="enter image url" v-model="src">
+        <input v-if="isUpdateMode" type="text" placeholder="enter image url" v-model="src">
         <pre>{{info}}</pre>
     </section>
     `,
@@ -22,6 +22,19 @@ export default {
     computed: {
         isEditable(){
             return this.info.isUpdateMode
+        }
+    },
+    methods: {
+        save(ev){
+            console.log(ev);
+            console.log(ev.target.className);
+            console.log(ev.target.innerText);
+        }
+    },
+    watch: {
+        src(){
+            this.info.image = this.src
+            console.log(this.src);
         }
     }
 }
