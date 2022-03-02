@@ -11,7 +11,7 @@ export default{
     data() {
         return {
             subject: this.info.subject,
-            src: this.info.src,
+            src: this.info.video,
             style: this.info.style,
         }
     },

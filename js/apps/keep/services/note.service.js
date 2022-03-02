@@ -24,7 +24,7 @@ function getEmptyNote(){
         id: utilService.makeId(),
         typeNote: '',
         info: {
-            subject: '',
+            subject: 'subject',
             style: {
                 backGroundColor: '#ffffff'
             },
@@ -43,7 +43,7 @@ function _createNotes() {
                 info: {
         
                     subject: 'aaa aaa',
-                    body: 'aaa aaa aaa aaa aaa aaa aaa aaa aaa',
+                    text: 'aaa aaa aaa aaa aaa aaa aaa aaa aaa',
                     style: {
                         backGroundColor: '#ffffff'
                     },
@@ -54,7 +54,7 @@ function _createNotes() {
                 typeNote: 'noteTxt',
                 info: {
                     subject: 'bbb bbb',
-                    body: 'bb bbb bbbb bbb bbb',
+                    text: 'bb bbb bbbb bbb bbb',
                     style: {
                         backGroundColor: '#ffffff'
                     },
@@ -66,7 +66,7 @@ function _createNotes() {
                 info: {
         
                     subject: 'img a',
-                    src: 'http://coding-academy.org/books-photos/20.jpg',
+                    image: 'http://coding-academy.org/books-photos/20.jpg',
                     style: {
                         backGroundColor: '#ffffff'
                     },
@@ -77,7 +77,7 @@ function _createNotes() {
                 typeNote: 'noteImg',
                 info: {
                     subject: 'img b',
-                    src: 'http://coding-academy.org/books-photos/14.jpg',
+                    image: 'http://coding-academy.org/books-photos/14.jpg',
                     style: {
                         backGroundColor: '#ffffff'
                     },
@@ -90,7 +90,7 @@ function _createNotes() {
                 info: {
         
                     subject: 'video a',
-                    src: 'https://www.youtube.com/embed/tgbNymZ7vqY',
+                    video: 'https://www.youtube.com/embed/tgbNymZ7vqY',
                     style: {
                         backGroundColor: '#ffffff'
                     },

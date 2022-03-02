@@ -9,7 +9,7 @@ export default{
     data() {
         return {
             subject: this.info.subject,
-            body: this.info.body,
+            body: this.info.text,
             style: this.info.style,
 
         }
