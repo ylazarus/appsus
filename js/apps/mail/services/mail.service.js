@@ -3,16 +3,16 @@ import { utilService } from "../../../services/util-service.js"
 
 const MAIL_KEY = "mailDB"
 
-_createEmails()
+_createMails()
 
 export const loggedinUser = {
-  email: "user@appsus.com",
+  mail: "user@appsus.com",
   fullname: "Mahatma Appsus",
 }
 
 export const mailService = {
   query,
-  deleteEmail,
+  deleteMail,
   get,
 }
 
@@ -20,31 +20,31 @@ function query() {
   return storageService.query(MAIL_KEY)
 }
 
-function deleteEmail() {}
+function deleteMail() {}
 
-function get(emailId) {
-  return storageService.get(MAIL_KEY, emailId).then((email) => {
-    return _setNextPrevEmailId(email)
+function get(mailId) {
+  return storageService.get(MAIL_KEY, mailId).then((mail) => {
+    return _setNextPrevEmailId(mail)
   })
 }
 
-function _setNextPrevEmailId(email) {
-  return storageService.query(MAIL_KEY).then((emails) => {
-    const emailIdx = emails.findIndex((currEmail) => currEmail.id === email.id)
-    email.nextEmailId = emails[emailIdx + 1]
-      ? emails[emailIdx + 1].id
-      : emails[0].id
-    email.prevEmailId = emails[emailIdx - 1]
-      ? emails[emailIdx - 1].id
-      : emails[emails.length - 1].id
-    return email
+function _setNextPrevEmailId(mail) {
+  return storageService.query(MAIL_KEY).then((mails) => {
+    const mailIdx = mails.findIndex((currMail) => currMail.id === mail.id)
+    mail.nextMailId = mails[mailIdx + 1]
+      ? mails[mailIdx + 1].id
+      : mails[0].id
+    mail.prevMailId = mails[mailIdx - 1]
+      ? mails[mailIdx - 1].id
+      : mails[mails.length - 1].id
+    return mail
   })
 }
 
-function _createEmails() {
-  let emails = utilService.loadFromStorage(MAIL_KEY)
-  if (!emails || !emails.length) {
-    emails = [
+function _createMails() {
+  let mails = utilService.loadFromStorage(MAIL_KEY)
+  if (!mails || !mails.length) {
+    mails = [
       {
         id: storageService._makeId(),
         subject: "Test Email 1",
@@ -79,5 +79,5 @@ function _createEmails() {
       },
     ]
   }
-  utilService.saveToStorage(MAIL_KEY, emails)
+  utilService.saveToStorage(MAIL_KEY, mails)
 }
