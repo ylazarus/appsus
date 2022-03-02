@@ -3,7 +3,7 @@ import appAbout from "./pages/app-about.cmp.js"
 import mailIndex from "./apps/mail/pages/mail-index.cmp.js"
 import noteIndex from "./apps/keep/pages/note-index.cmp.js"
 import displayedMail from "./apps/mail/cmps/displayed-mail.cmp.js"
-
+import addNote from "./apps/keep/cmps/add-note.cmp.js"
 
 
 
@@ -28,7 +28,13 @@ const routes = [
     },
     {
       path: "/keep",
-      component: noteIndex
+      component: noteIndex,
+      children: [
+        {
+            path: 'edit/:noteId?',
+            component: addNote
+        }
+    ]
     },
   ]
   
