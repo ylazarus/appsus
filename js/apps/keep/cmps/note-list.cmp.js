@@ -18,27 +18,42 @@ export default {
     },
     data() {
         return {
-            notes: null
+            notes: null,
+            filterBy: null,
         }
     },
     created() {
         this.getNotes()
-        this.unsubscribe = eventBus.on('updateList', this.getNotes)
+        this.unsubscribe1 = eventBus.on('updateList', this.getNotes)
+        this.unsubscribe2 = eventBus.on('setFilter', this.setFilter)
     },
     methods: {
         getNotes() {
             console.log('query');
             notesService.query()
-                .then(notes => {this.notes = notes})
+                .then(notes => { this.notes = notes })
         },
+        setFilter(filterBy) {
+            this.filterBy = filterBy
+            console.log(this.filterBy);
+        }
     },
     computed: {
         notesToShow() {
-            return this.notes
+            if (!this.filterBy) return this.notes
+            const regex = new RegExp(this.filterBy.search, 'i')
+            let filtered = this.notes.filter(note => regex.test(note.info.subject)
+                    //|| regex.test(note.info.text)
+                )
+                if (this.filterBy.type){
+                  filtered = filtered.filter(note=> note.typeNote === this.filterBy.type)  
+                }
+                return filtered
         }
     },
     unmounted() {
         console.log('unmounted');
-        this.unsubscribe();
+        this.unsubscribe1();
+        this.unsubscribe2();
     }
 }

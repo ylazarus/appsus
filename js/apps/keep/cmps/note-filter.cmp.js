@@ -1,36 +1,35 @@
-
+import { eventBus } from "../../../services/eventBus-service.js"
 
 export default {
+    props: ['types'],
     template: `
     <section class="note-filter">
         <label> Search: 
             <input type="search" placeholder="Search..." v-model="filterBy.search">
         </label>
         <label>
-            <select v-model="filterBy.type" @change="">
-            <option v-for="(value, name) in NoteTypes" :value="value">{{name}}</option>
+            <select v-model="filterBy.type">
+            <option v-for="(value, name) in types" :value="name">{{value}}</option>
             </select>
         </label>
+        <button @click="setFilter">Filter</button>
     </section>
     `,
-    components: {
-        noteList,
-    },
     data() {
         return {
             filterBy: {
                 search: '',
                 type: '',
             },
-            noteTypes: {
-                noteTxt: 'text',
-                noteTodos: 'list',
-                noteImg: 'image',
-                noteVideo: 'video',
-            }
         }
     },
+    created(){
+        console.log(this.types);
+    },
     methods: {
-        
+        setFilter(){
+            console.log(this.filterBy);
+            eventBus.emit('setFilter', this.filterBy)
+        }
     }
 }

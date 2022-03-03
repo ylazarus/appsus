@@ -36,7 +36,6 @@ function remove(noteId) {
 
 function getEmptyNote(){
    return {
-        // id: utilService.makeId(),
         typeNote: '',
         info: {
             subject: 'subject',

@@ -59,7 +59,7 @@ export default {
         },
         saveNote(info) {
             this.noteToEdit.info = info
-            this.noteToEdit.id += 'u'
+            this.noteToEdit.id
             if (this.noteToEdit.id) {
                 console.log('update');
                 notesService.update({ ...this.noteToEdit })
