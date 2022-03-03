@@ -1,3 +1,38 @@
-.bold{
-    font-weight: bold;
+.email-list >*:not(:last-child){
+    margin-right: 1.5rem
 }
+
+.mail-page-container{
+    margin-left: 2rem;
+    margin-right: 2rem
+}
+
+.mail-preview-container{
+    padding: .5rem;
+}
+
+.nav-mail-container{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.search-options{
+    margin-bottom: 5rem;
+}
+
+.mail-container{
+    background-color: azure;
+    width: 100%;
+    margin-left: 2rem
+}
+
+.mail-nav{
+    height: 7rem;
+    justify-content: space-between;
+    width: 10rem;
+}
+
+.bold{
+    font-family: roboto-bold;
+}
+

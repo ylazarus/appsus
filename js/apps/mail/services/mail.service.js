@@ -6,6 +6,7 @@ const MAIL_KEY = "mailDB"
 _createMails()
 
 export const loggedinUser = {
+  
   mail: "user@appsus.com",
   fullname: "Mahatma Appsus",
 }
@@ -58,8 +59,9 @@ function getDraft() {
     // id: storageService._makeId(),
     subject: '',
     txt: '',
-    isRead: false,
+    isRead: true,
     to: '',
+    from: 'user@appsus.com'
   }
 }
 
@@ -73,7 +75,7 @@ function _createMails() {
         txt: "This is test email 1, how are you today?",
         isRead: false,
         sentAt: Date.now() - 1000 * 60 * 60 * 24,
-        to: "user@apsus.com",
+        to: "user@appsus.com",
         from: "tester@test.com"
       },
       {
@@ -82,7 +84,7 @@ function _createMails() {
         txt: "This is test email 2, how are you today?",
         isRead: false,
         sentAt: Date.now() - 2 * 1000 * 60 * 60 * 24,
-        to: "user@apsus.com",
+        to: "user@appsus.com",
         from: "tester@test.com"
       },
       {
@@ -91,17 +93,17 @@ function _createMails() {
         txt: "This is test email 3, how are you today?",
         isRead: false,
         sentAt: Date.now() - 3 * 1000 * 60 * 60 * 24,
-        to: "user@apsus.com",
+        to: "user@appsus.com",
         from: "tester@test.com"
       },
       {
         id: storageService._makeId(),
         subject: "This is a sent message",
         txt: "This is test email 4, how are you today?",
-        isRead: false,
+        isRead: true,
         sentAt: Date.now() - 3 * 1000 * 60 * 60 * 24,
         to: "momo@momo.com",
-        from: "user@apsus.com"
+        from: "user@appsus.com"
       },
     ]
   }

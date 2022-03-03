@@ -35,7 +35,7 @@ export default{
                 .then(mail => {
                     // this.tempMessage = mail
                     this.message = mail
-                    this.message.isRead = false
+                    this.message.isRead = true
                     let wasFrom = this.message.from
                     let wasTo = this.message.to
                     this.message.to = wasFrom 
