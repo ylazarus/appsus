@@ -1,0 +1,18 @@
+.mail-display-card{
+    background-color: var(--bgc);
+    width: 350px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.mail-display-card .btn{
+    margin: .25em
+}
+
+.mail-title{
+    text-align: center;
+}
+
+.mail-txt{
+    height: 50vh;
+}

@@ -15,3 +15,5 @@
 @import './apps/keep/note-list.css';
 
 @import './apps/mail/mail-index.css';
+@import './apps/mail/mail-view.css';
+@import './apps/mail/mail-compose.css';
