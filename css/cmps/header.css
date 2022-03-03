@@ -2,6 +2,12 @@
     background-color: var(--theme);
 }
 
+.header-container a{
+    height: 100%;
+    line-height: 100px;
+    /* align-self: center; */
+}
+
 .app-header{
     height: 100px;
     padding: 0;
@@ -21,16 +27,12 @@
     background-color: var(--hover);
 }
 
-.header-container li{
-    display: flex;
-    height: 100px;
-    align-items: center;
-    padding: 0 .5rem;
-}
-
 .header-links{
     gap: 1.5rem;
     font-size: 1.5em;
+    height: 100%;
+    /* align-items: center; */
+    
 }
 
 .header-links >*:hover{
