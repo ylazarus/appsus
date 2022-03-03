@@ -1,18 +1,19 @@
-export default{
+export default {
     props: ['info'],
     template: `
-    <section class="note-todos">
+    <section class="note-todos" :style="backGroundColor">
     <h3 class="subject" :contenteditable="isEditable" @keyup="saveChange">{{subject}}</h3>
         <ul>
-            <li v-for="todo in todosList" :contenteditable="isEditable" @keyup="saveChange">
-                {{todo.txt}}
+            <li v-for="(todo, index) in todosList" >
+                <p :class="'' +todo.idx" :contenteditable="isEditable" @keyup="saveChange">{{todo.txt}}</p>
+                <input type="checkbox" v-model="todo.isDone">
             </li>
         </ul>
-        <router-link to="/keep" @click="deleteNote">Delete</router-link>
         
         <div v-if="isUpdateMode"  class="update-note">
-            <router-link to="/keep" @click="updateNotes">Save</router-link>
-            <pre>{{info}}</pre>
+            <button @click="addLine">Add line</button>
+            <button @click="deleteNote">Delete</button>
+            <button @click="updateNotes">Save</button>
         </div>
     </section>
     `,
@@ -21,24 +22,37 @@ export default{
             subject: this.info.subject,
             todosList: this.info.list,
             style: this.info.style,
-            isUpdateMode: this.info.isUpdateMode
+            isUpdateMode: this.info.isUpdateMode,
         }
+    },
+    created() {
     },
     computed: {
         isEditable() {
             return this.info.isUpdateMode
+        },
+        backGroundColor(){
+            return `background-color: ${this.style.backGroundColor}`
         }
     },
     methods: {
+        addLine() {
+            this.todosList[this.todosList.length] = { txt: 'wat todo?', isDone: false, idx: this.todosList.length }
+        },
         saveChange(ev) {
-            this.info[ev.target.className] = ev.target.innerText
+            if (ev.target.className === 'subject') {
+                this.info.subject = ev.target.innerText
+
+            }
+            this.todosList[ev.target.className].txt = ev.target.innerText
         },
         updateNotes() {
+            this.info.list = this.todosList
             this.info.isUpdateMode = false
-            this.$emit('update', {...this.info})
+            this.$emit('update', { ...this.info })
         },
         deleteNote() {
-            this.$emit('delete', {...this.info})
+            this.$emit('delete', { ...this.info })
         }
     },
 }

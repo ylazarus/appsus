@@ -2,12 +2,12 @@ import { notesService } from "../services/note.service.js"
 import { eventBus } from "../../../services/eventBus-service.js"
 import notePreview from "./note-preview.cmp.js"
 
-export default{
+export default {
     template: `
     <section class="note-list">
-        <ul v-if="notes">
+        <ul v-if="notesToShow">
             <li v-for="note in notesToShow">
-                <note-preview :note="note"/>
+                <note-preview :note="note" :key="note.id"/>
             </li>
         </ul>
     </section>
@@ -16,22 +16,21 @@ export default{
     components: {
         notePreview,
     },
-    data () {
+    data() {
         return {
             notes: null
         }
     },
     created() {
         this.getNotes()
-        this.unsubscribe = eventBus.on('updateList', this.getNotes);
+        this.unsubscribe = eventBus.on('updateList', this.getNotes)
     },
     methods: {
         getNotes() {
             console.log('query');
             notesService.query()
-            .then(notes => this.notes=notes)
-        }
-
+                .then(notes => {this.notes = notes})
+        },
     },
     computed: {
         notesToShow() {
@@ -39,6 +38,7 @@ export default{
         }
     },
     unmounted() {
+        console.log('unmounted');
         this.unsubscribe();
     }
 }

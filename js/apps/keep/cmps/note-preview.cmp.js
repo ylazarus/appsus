@@ -6,9 +6,7 @@ import noteVideo from "./note-video.cmp.js"
 export default{
     props: ['note'],
     template: `
-    <section class="preview">
         <component :is="note.typeNote" :info="note.info"  :id="note.id" @click="updateNote(note.id)"></component>
-    </section>
     `,
     components: {
         noteTxt,

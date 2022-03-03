@@ -1,18 +1,17 @@
 export default {
     props: ['info'],
     template: `
-    <section class="note-img">
+    <section class="note-img"  :style="backGroundColor">
         <h3 class="subject" :contenteditable="isEditable" @keyup="saveChange">{{subject}}</h3>
         <img :src="src" alt="select image">
-        <router-link to="/keep" @click="deleteNote">Delete</router-link>
-        
+       
         <div v-if="isUpdateMode"  class="update-note">
             <label>
                 Enter image url: 
                 <input type="text" placeholder="enter image url" v-model="src">
             </label>
-            <router-link to="/keep" @click="updateNotes">Save</router-link>
-            <pre>{{info}}</pre>
+            <button @click="deleteNote">Delete</button>
+            <button @click="updateNotes">Save</button>
         </div>
     </section>
     `,
@@ -27,6 +26,9 @@ export default {
     computed: {
         isEditable() {
             return this.info.isUpdateMode
+        },
+        backGroundColor(){
+            return `background-color: ${this.style.backGroundColor}`
         }
     },
     methods: {
@@ -35,10 +37,10 @@ export default {
         },
         updateNotes() {
             this.info.isUpdateMode = false
-            this.$emit('update', {...this.info})
+            this.$emit('update', { ...this.info })
         },
         deleteNote() {
-            this.$emit('delete', {...this.info})
+            this.$emit('delete', { ...this.info })
         }
     },
     watch: {

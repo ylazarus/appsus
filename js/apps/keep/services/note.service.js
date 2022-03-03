@@ -71,7 +71,7 @@ function _createNotes() {
                     subject: 'bbb bbb',
                     text: 'bb bbb bbbb bbb bbb',
                     style: {
-                        backGroundColor: '#ffffff'
+                        backGroundColor: '#ffff007a'
                     },
                 },
             },
@@ -117,9 +117,9 @@ function _createNotes() {
                 info: {
         
                     subject: 'todos a',
-                    list: [{txt: 'aaa', isDone: false}, {txt: 'bbb', isDone: true}, {txt: 'ccc', isDone: false}],
+                    list: [{txt: 'aaa', isDone: false, idx:0}, {txt: 'bbb', isDone: true, idx:1}, {txt: 'ccc', isDone: false, idx:2}],
                     style: {
-                        backGroundColor: '#ffffff'
+                        backGroundColor: '#ffff007a'
                     },
                 },
             },

@@ -1,14 +1,13 @@
-export default{
+export default {
     props: ['info'],
     template: `
-    <section class="note-txt" >
+    <section class="note-txt" :style="backGroundColor">
     <h3 class="subject" :contenteditable="isEditable" @keyup="saveChange">{{subject}}</h3>
         <p class="text" :contenteditable="isEditable" @keyup="saveChange">{{text}}</p>
-        <router-link to="/keep" @click="deleteNote">Delete</router-link>
         
         <div v-if="isUpdateMode"  class="update-note">
-            <router-link to="/keep" @click="updateNotes">Save</router-link>
-            <pre>{{info}}</pre>
+        <button @click="deleteNote">Delete</button>
+            <button @click="updateNotes">Save</button>
         </div>
     </section>
     `,
@@ -24,6 +23,9 @@ export default{
     computed: {
         isEditable() {
             return this.info.isUpdateMode
+        },
+        backGroundColor() {
+            return `background-color: ${this.style.backGroundColor}`
         }
     },
     methods: {
@@ -32,10 +34,10 @@ export default{
         },
         updateNotes() {
             this.info.isUpdateMode = false
-            this.$emit('update', {...this.info})
+            this.$emit('update', { ...this.info })
         },
         deleteNote() {
-            this.$emit('delete', {...this.info})
+            this.$emit('delete', { ...this.info })
         }
     },
 }

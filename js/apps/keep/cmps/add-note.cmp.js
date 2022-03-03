@@ -50,29 +50,43 @@ export default {
             if (!this.noteToEdit.id) {
                 this.noteToEdit.typeNote = this.selectedType
                 this.noteToEdit.info[this.NoteTypes[this.selectedType]] = this.NoteTypes[this.selectedType] + ''
+                if (this.selectedType === 'noteTodos') {
+                    this.noteToEdit.info.list = [{ txt: 'wat todo?', isDone: false, idx: 0 }]
+                }
             }
             this.noteToEdit.info.isUpdateMode = true
             this.isUpdate = !this.isUpdate
         },
         saveNote(info) {
             this.noteToEdit.info = info
+            this.noteToEdit.id += 'u'
             if (this.noteToEdit.id) {
-                console.log(this.noteToEdit);
                 console.log('update');
                 notesService.update({ ...this.noteToEdit })
-                .then(()=> eventBus.emit('updateList'))
+                    .then((note) => {
+                        eventBus.emit('updateList')
+                        this.$router.push('/keep')
+                    })
 
             } else {
                 console.log('save');
                 notesService.save({ ...this.noteToEdit })
-                .then(()=> eventBus.emit('updateList'))
+                    .then((note) => {
+                        eventBus.emit('updateList')
+                        this.$router.push('/keep')
+                    })
+
             }
         },
         deleteNote() {
-            if (! this.noteToEdit.id) return
+            if (!this.noteToEdit.id) return
             console.log('delete');
             notesService.remove(this.noteToEdit.id)
-                .then(()=> eventBus.emit('updateList'))
+                .then((note) => {
+                    eventBus.emit('updateList')
+                    this.$router.push('/keep')
+                })
+
         }
     },
     watch: {
