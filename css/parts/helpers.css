@@ -34,11 +34,5 @@
   text-decoration: none;
 }
 
-.no-overflow {
-  white-space: nowrap;
-  width: 50px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 
 /* color */

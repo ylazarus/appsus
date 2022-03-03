@@ -3,11 +3,9 @@ export default {
   template: `
     <router-link class="clean-link" :to="'/mail/'+mail.id">
     <li class="flex space-between clean-list  email-list" >
-      <div class="from-subject flex space-between">    
-          <p :class="isBold">{{mail.from}}</p>
-          <p><span class="mail-subject no-overflow" :class="isBold">{{mail.subject}}</span></p>
-      </div>
-      <p :class="isBold" >{{sentAt}}</p>
+      <p class="mail-from" :class="isBold">{{mail.from}}</p>
+      <p class="mail-subject" :class="isBold">{{mail.subject}}</p>
+      <p class="sent-at" :class="isBold" >{{sentAt}}</p>
     </li>   
     </router-link>
     `,

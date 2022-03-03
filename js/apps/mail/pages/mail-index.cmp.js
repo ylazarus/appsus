@@ -4,9 +4,11 @@ import mailFilter from "../cmps/mail-filter.cmp.js"
 
 export default{
     template: `
-    <h1>Mail App</h1>
     <main class="mail-page-container">
+    <header class="main-page-header flex">    
+        <h1 class="mail-logo">Mail App</h1>
         <mail-filter @sorted="setSort" @filtered="setFilter" />
+    </header>
         <div class="nav-mail-container flex">
             <nav class="mail-nav flex flex-column">
                 <router-link to="/compose">+ Compose</router-link>
