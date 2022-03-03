@@ -12,13 +12,7 @@ img {
   width: 100%;
 }
 
-a {
-  color: black;
-}
 
-a:visited {
-  color: black;
-}
 
 .btn {
   background: #9b9898;
@@ -57,13 +51,7 @@ a:visited {
   text-decoration: none;
 }
 
-a {
-  color: black;
-}
 
-a:visited {
-  color: black;
-}
 
 ul {
   margin-top: 0;

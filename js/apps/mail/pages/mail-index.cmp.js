@@ -4,7 +4,7 @@ import mailFilter from "../cmps/mail-filter.cmp.js"
 
 export default{
     template: `
-    <main class="mail-page-container">
+    <main class="mail-page-container main-layout">
     <header class="main-page-header flex">    
         <h1 class="mail-logo">Mail App</h1>
         <mail-filter @sorted="setSort" @filtered="setFilter" />

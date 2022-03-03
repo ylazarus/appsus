@@ -4,17 +4,21 @@ import { eventBus } from "../../../services/eventBus-service.js"
 
 export default {
   template: `
-        
-        <h1>Email</h1>
-        <h1>{{mail.subject}}</h1>
-        <h3>From: {{mail.from}}</h3>
-        <p>{{mail.txt}}</p>
-        <button @click="markUnread">Mark as Unread</button>
-        <button @click="deleteMessage">Delete Message</button>
-        <router-link :to="'/compose/'+mail.id">Reply</router-link>
-        <router-link :to="'/mail/'+mail.prevMailId">Prev Email</router-link> | 
-        <router-link :to="'/mail/'+mail.nextMailId">Next Email</router-link> | 
-        <router-link to="/mail">Back</router-link>
+        <section class="displayed-email-page main-layout">
+          <h1>Email</h1>
+          <div>
+
+            <h1>{{mail.subject}}</h1>
+            <h3>From: {{mail.from}}</h3>
+            <p>{{mail.txt}}</p>
+            <button class="btn" @click="markUnread">Mark as Unread</button>
+            <button class="btn" @click="deleteMessage">Delete Message</button>
+            <router-link class="btn" :to="'/compose/'+mail.id">Reply</router-link>
+            <router-link class="btn" :to="'/mail/'+mail.prevMailId">Prev Email</router-link> | 
+            <router-link class="btn" :to="'/mail/'+mail.nextMailId">Next Email</router-link> | 
+            <router-link class="btn" to="/mail">Back</router-link>
+          </div>
+        </section>
             
     `,
   data() {
