@@ -1,0 +1,29 @@
+.mail-compose-card{
+    background-color: var(--bgc);
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1rem;
+    align-items: baseline;
+}
+
+
+
+.mail-compose-title{
+    text-align: center;
+}
+
+.mail-compose-to{
+    width: 100%;
+    margin-bottom: 1rem;
+
+}
+.mail-compose-subject{
+    width: 100%;
+}
+
+.mail-compose-txt{
+    height: 50vh;
+    width: 100%;
+    resize: none;
+}

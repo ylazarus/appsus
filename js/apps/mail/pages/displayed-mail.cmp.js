@@ -11,13 +11,13 @@ export default {
             <h3>From: {{mail.from}}</h3>
             <p class="mail-txt">{{mail.txt}}</p>
               
-            <div class="first-buttons-row flex space-between">
+            <div class="first-buttons-row flex ">
                 <button class="btn" @click="markUnread">Mark as Unread</button>
                 <button class="btn" @click="deleteMessage">Delete Message</button>
                 <router-link class="btn" :to="'/compose/'+mail.id">Reply</router-link>
             </div>
               
-            <div class="second-buttons-row flex space-between">
+            <div class="second-buttons-row flex ">
                 <router-link class="btn" :to="'/mail/'+mail.prevMailId">Prev Email</router-link>
                 <router-link class="btn" :to="'/mail/'+mail.nextMailId">Next Email</router-link>
                 <router-link class="btn" to="/mail">Back To Inbox</router-link>

@@ -1,8 +1,10 @@
 .mail-display-card{
     background-color: var(--bgc);
-    width: 350px;
+    width: 500px;
     margin-right: auto;
     margin-left: auto;
+    padding: .5rem;
+    align-items: baseline;
 }
 
 .mail-display-card .btn{

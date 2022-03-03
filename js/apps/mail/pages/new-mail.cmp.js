@@ -4,23 +4,20 @@ import { eventBus } from "../../../services/eventBus-service.js"
 
 export default{
     template: `
-    <h1>Compose Mail</h1>
-    <form @submit.prevent="send">
-        <label>To:
-            <input type="email" required v-model="message.to" placeholder="example@example.com">
-        </label>
+    <h1 class="mail-compose-title">Compose Mail</h1>
+    <form class="mail-compose-card flex flex-column" @submit.prevent="send">
+        <!-- <label>To: -->
+            <input class="mail-compose-to" type="email" required v-model="message.to" placeholder="To: example@example.com">
+        <!-- </label> -->
+        <!-- <br> -->
+        <!-- <label>Subject: -->
+            <input class="mail-compose-subject" type="text" v-model="message.subject" placeholder="Subject">
+        <!-- </label> -->
         <br>
-        <label>Subject:
-            <input type="text" v-model="message.subject" placeholder="Subject">
-        </label>
-        <br>
-        <textarea v-model="message.txt" cols="30" rows="10"></textarea>
+        <textarea v-model="message.txt" class="mail-compose-txt"></textarea>
             <br>
-            <button>Submit</button>
+            <button class="btn" >Send</button>
     </form>
-    <pre>{{message}}</pre>
-    <pre>{{tempMessage}}</pre>
-    
     `,
     data() {
         return {
