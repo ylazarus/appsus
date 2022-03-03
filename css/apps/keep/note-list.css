@@ -21,11 +21,10 @@
     gap: 15px;
     justify-content: center;
 }
-.note-list li{
+.note-list .note-preview{
     height:fit-content;
-    width: 200px;;
 }
-.note-list li>*{
+.note-list .note-preview>*{
     background-color: var(--bgc);
     display: flex;
     flex-direction: column;
@@ -36,10 +35,18 @@
 
     
 }
-.note-list ul img{
+.note-list img{
     width: 80%;
 }
-.note-list ul iframe{
+.note-list iframe{
     width: 80%;
     height: 50%;
+}
+
+.todo-line {
+    display: flex;
+    justify-content:baseline;
+    align-items: center;
+    width: 80%;
+    gap: 10px;
 }

@@ -6,7 +6,7 @@ export default {
     template: `
     <section class="note-list">
         <ul v-if="notesToShow" class="grid">
-            <li v-for="note in notesToShow">
+            <li class="note-preview" v-for="note in notesToShow">
                 <note-preview :note="note" :key="note.id"/>
             </li>
         </ul>

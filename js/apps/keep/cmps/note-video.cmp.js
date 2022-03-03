@@ -2,8 +2,8 @@ export default{
     props: ['info'],
     template: `
     <section class="note-video" :style="backGroundColor">
-    <h3 class="subject" :contenteditable="isEditable" @keyup="saveChange">{{subject}}</h3>
-        <iframe width="150" height="100"
+    <h3 class="subject" data-name="subject" :contenteditable="isEditable" @keyup="saveChange">{{subject}}</h3>
+        <iframe width="150" height="100" 
             :src="src">
         </iframe>
         
@@ -36,7 +36,7 @@ export default{
     },
     methods: {
         saveChange(ev) {
-            this.info[ev.target.className] = ev.target.innerText
+            this.info[ev.target.dataset.name] = ev.target.innerText
         },
         updateNotes() {
             this.info.isUpdateMode = false

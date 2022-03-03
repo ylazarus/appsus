@@ -37,7 +37,6 @@ export default {
         if (this.noteId) {
             notesService.get(this.noteId)
                 .then(note => {
-                    console.log(note);
                     this.noteToEdit = note
                     this.selectedType = note.typeNote
                     this.renderNote()
@@ -78,7 +77,11 @@ export default {
             }
         },
         deleteNote() {
-            if (!this.noteToEdit.id) return
+            if (!this.noteToEdit.id){
+                this.$router.push('/keep')
+
+                return
+            }
             console.log('delete');
             notesService.remove(this.noteToEdit.id)
                 .then((note) => {

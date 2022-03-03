@@ -2,11 +2,11 @@ export default {
     props: ['info'],
     template: `
     <section class="note-todos" :style="backGroundColor">
-    <h3 class="subject" :contenteditable="isEditable" @keyup="saveChange">{{subject}}</h3>
+    <h3 class="subject" data-name="subject" :contenteditable="isEditable" @keyup="saveChange">{{subject}}</h3>
         <ul>
-            <li v-for="(todo, index) in todosList" >
-                <p :class="'' +todo.idx" :contenteditable="isEditable" @keyup="saveChange">{{todo.txt}}</p>
+            <li class="todo-line" v-for="(todo, index) in todosList" >
                 <input type="checkbox" v-model="todo.isDone">
+                <p :class="'' +todo.idx" :data-name="'' +todo.idx" :contenteditable="isEditable" @keyup="saveChange">{{todo.txt}}</p>
             </li>
         </ul>
         
@@ -40,11 +40,9 @@ export default {
             this.todosList[this.todosList.length] = { txt: 'wat todo?', isDone: false, idx: this.todosList.length }
         },
         saveChange(ev) {
-            if (ev.target.className === 'subject') {
+            if (ev.target.dataset.name === 'subject') {
                 this.info.subject = ev.target.innerText
-
-            }
-            this.todosList[ev.target.className].txt = ev.target.innerText
+            } else this.todosList[ev.target.dataset.name].txt = ev.target.innerText
         },
         updateNotes() {
             this.info.list = this.todosList

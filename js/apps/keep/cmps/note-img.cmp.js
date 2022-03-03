@@ -2,7 +2,7 @@ export default {
     props: ['info'],
     template: `
     <section class="note-img"  :style="backGroundColor">
-        <h3 class="subject" :contenteditable="isEditable" @keyup="saveChange">{{subject}}</h3>
+        <h3 class="subject" data-name="subject" :contenteditable="isEditable" @keyup="saveChange">{{subject}}</h3>
         <img :src="src" alt="select image">
        
         <div v-if="isUpdateMode"  class="update-note">
@@ -33,7 +33,7 @@ export default {
     },
     methods: {
         saveChange(ev) {
-            this.info[ev.target.className] = ev.target.innerText
+            this.info[ev.target.dataset.name] = ev.target.innerText
         },
         updateNotes() {
             this.info.isUpdateMode = false
