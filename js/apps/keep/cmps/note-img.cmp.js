@@ -4,13 +4,14 @@ export default {
     <section class="note-img">
         <h3 class="subject" :contenteditable="isEditable" @keyup="saveChange">{{subject}}</h3>
         <img :src="src" alt="select image">
+        <router-link to="/keep" @click="deleteNote">Delete</router-link>
+        
         <div v-if="isUpdateMode"  class="update-note">
             <label>
                 Enter image url: 
                 <input type="text" placeholder="enter image url" v-model="src">
             </label>
-            <button to="/keep" @click="updateNote">Save</button>
-            <!-- <router-link to="/keep" @click="updateNote">Save</router-link> -->
+            <router-link to="/keep" @click="updateNotes">Save</router-link>
             <pre>{{info}}</pre>
         </div>
     </section>
@@ -23,9 +24,6 @@ export default {
             isUpdateMode: this.info.isUpdateMode
         }
     },
-    created() {
-        console.log(this.info);
-    },
     computed: {
         isEditable() {
             return this.info.isUpdateMode
@@ -34,18 +32,18 @@ export default {
     methods: {
         saveChange(ev) {
             this.info[ev.target.className] = ev.target.innerText
-            console.log(this.info);
         },
-        updateNote() {
+        updateNotes() {
             this.info.isUpdateMode = false
             this.$emit('update', {...this.info})
+        },
+        deleteNote() {
+            this.$emit('delete', {...this.info})
         }
     },
     watch: {
         src() {
             this.info.image = this.src
-            console.log(this.src);
-            console.log(this.info);
         }
     }
 }

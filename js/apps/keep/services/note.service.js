@@ -5,7 +5,9 @@ export const notesService = {
     query,
     getEmptyNote,
     get,
-    put,
+    update,
+    save,
+    remove,
 }
 
 const NOTES_KEY = 'notes'
@@ -20,13 +22,21 @@ function get(noteId) {
     return storageService.get(NOTES_KEY, noteId)
 }
 
-function put(note) {
+function update(note) {
     return storageService.put(NOTES_KEY, note)
+}
+
+function save(note) {
+    return storageService.post(NOTES_KEY, note)
+}
+
+function remove(noteId) {
+    return storageService.remove(NOTES_KEY, noteId)
 }
 
 function getEmptyNote(){
    return {
-        id: utilService.makeId(),
+        // id: utilService.makeId(),
         typeNote: '',
         info: {
             subject: 'subject',
