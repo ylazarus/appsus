@@ -6,6 +6,9 @@
     grid-template-columns: repeat(auto-fill, 200px);
     gap: 15px;
 }
+.note-list li{
+    
+}
 .note-list li>*{
     display: flex;
     flex-direction: column;
