@@ -13,6 +13,7 @@ export default {
             </select>
         </label>
         <button @click="setFilter">Filter</button>
+        <button @click="resetFilter">Reset filter</button>
     </section>
     `,
     data() {
@@ -23,13 +24,15 @@ export default {
             },
         }
     },
-    created(){
-        console.log(this.types);
-    },
     methods: {
         setFilter(){
             console.log(this.filterBy);
             eventBus.emit('setFilter', this.filterBy)
+        },
+        resetFilter(){
+            this.filterBy.search = ''
+            this.filterBy.type = ''
+            this.setFilter()
         }
     }
 }

@@ -1,5 +1,6 @@
 
 @import './parts/base.css';
+@import './parts/vars.css';
 @import './parts/fonts.css';
 @import './parts/helpers.css';
 @import './parts/mq.css';
@@ -11,6 +12,6 @@
 @import './cmps/app-about.css';
 
 @import './apps/keep/note-index.css';
-@import './apps/keep/note-details.css';
+@import './apps/keep/note-list.css';
 
 @import './apps/mail/mail-index.css';

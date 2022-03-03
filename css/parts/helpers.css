@@ -1,3 +1,12 @@
+
+/* layout */
+
+.main-layout {
+  max-width: 1200px;
+  width: 80vw;
+  margin: 0 auto;
+}
+
 /* flex */
 
 .flex {
