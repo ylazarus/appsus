@@ -11,19 +11,21 @@ export default{
         </label>
         <br>
         <label>Subject:
-            <input type="text" v-model="message.subject" placeholder="example@example.com">
+            <input type="text" v-model="message.subject" placeholder="Subject">
         </label>
         <br>
         <textarea v-model="message.txt" cols="30" rows="10"></textarea>
             <br>
             <button>Submit</button>
     </form>
+    <pre>{{message}}</pre>
+    <pre>{{tempMessage}}</pre>
     
     `,
     data() {
         return {
             message: null,
-            tempMessage: null
+            
         }
     },
     created(){
@@ -31,13 +33,15 @@ export default{
         if (id){
             mailService.get(id)
                 .then(mail => {
-                    this.tempMessage = mail
+                    // this.tempMessage = mail
                     this.message = mail
                     this.message.isRead = false
-                    this.message.to = this.tempMessage.from 
-                    this.message.from = this.tempMessage.to
-                    this.message.subject = 'Re: ' + this.tempMessage.subject
-                    this.message.subject = '<br><br>' + this.tempMessage.txt
+                    let wasFrom = this.message.from
+                    let wasTo = this.message.to
+                    this.message.to = wasFrom 
+                    this.message.from = wasTo
+                    this.message.subject = 'Re: ' + this.message.subject
+                    this.message.txt = '\n \n \n' + this.message.txt
                 })
         } else {
             this.message =  mailService.getDraft()

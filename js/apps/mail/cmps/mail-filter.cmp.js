@@ -1,30 +1,24 @@
-// export default {
-//     template: `
-//           <section class="book-filter">
-//               <label>
-//               Search By Name
-//               <input type="text" v-model="filterBy.title" placeholder="Search...">
-//               </label>
-//               <label>
-//               Search By Price
-//               <input type="number" v-model.number="filterBy.lowRange" placeholder="Price Range From">
-//               <input type="number" v-model.number="filterBy.highRange" placeholder="Price Range To">
-//               </label>
-//               <button @click.stop="setFilter">Search</button>
-//           </section>
-//       `,
-//     data() {
-//       return {
-//         filterBy: {
-//           title: "",
-//           lowRange: 0,
-//           highRange: Infinity
-//         },
-//       }
-//     },
-//     methods: {
-//       setFilter() {
-//         this.$emit("filtered", { ...this.filterBy })
-//       },
-//     },
-//   }
+export default {
+    template: `
+    <section>
+        <input class="mail-search" v-model="filterBy.txt" title="Search Mail" type="text" placeholder="Search Mail">
+        <button @click.stop="setFilter">Search</button>
+        <label>Show Read<input @change="setFilter" value="read" v-model="filterBy.readUnread" type="checkbox" title="Show Read"></label>
+        <label>Show Unread<input @change="setFilter" value="unread" v-model="filterBy.readUnread" type="checkbox" title="Show Unread"></label>
+    </section>
+      `,
+    data() {
+      return {
+        filterBy: {
+          txt: '',
+          readUnread: ['read', 'unread'],
+          
+        },
+      }
+    },
+    methods: {
+      setFilter() {
+        this.$emit("filtered", { ...this.filterBy })
+      },
+    },
+  }

@@ -7,6 +7,7 @@ export default {
         
         <h1>Email</h1>
         <h1>{{mail.subject}}</h1>
+        <h3>From: {{mail.from}}</h3>
         <p>{{mail.txt}}</p>
         <button @click="markUnread">Mark as Unread</button>
         <button @click="deleteMessage">Delete Message</button>

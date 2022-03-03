@@ -1,12 +1,15 @@
 import { mailService } from "../services/mail.service.js"
 import mailList from "../cmps/mail-list.cmp.js"
+import mailFilter from "../cmps/mail-filter.cmp.js"
 
 export default{
     template: `
     <h1>Mail App</h1>
-    <input class="mail-search" title="Search Mail" type="text" placeholder="Search Mail">
-    <input type="checkbox" title="Show Read/Unread" class="show-read-unread">
+
+
+
     <section class="main-page-container">
+        <mail-filter class="mail-filter" @filtered="setFilter" />
         <nav class="mail-nav">
         <router-link to="/compose">+ Compose</router-link>
             <ul>
@@ -18,7 +21,7 @@ export default{
             </ul>
         </nav>
         <main class="mail-container">
-            <mail-list :mails="mails"
+            <mail-list :mails="mailsToShow"
               />
         </main>
 
@@ -26,13 +29,13 @@ export default{
     `,
     components: {
         mailList,
+        mailFilter,
     },
    
     data() {
         return {
-             mails: null,
-             
-             filterBy: null,
+            mails: null,
+            filterBy: null,
 
         }
     },
@@ -43,6 +46,17 @@ export default{
                 if (!mail.isRead) count++
             });
             return count
+        },
+        mailsToShow(){
+            if (!this.filterBy) return this.mails
+            return this.mails.filter((mail) =>{
+                return (mail.txt.includes(this.filterBy.txt) ||
+                        mail.subject.includes(this.filterBy.txt) ||
+                        mail.from.includes(this.filterBy.txt) ||
+                        mail.to.includes(this.filterBy.txt)) &&
+                        (mail.isRead && this.filterBy.readUnread.includes('read')) ||
+                        (!mail.isRead && this.filterBy.readUnread.includes('unread'))
+            })
         }
     },
     created() {
@@ -51,6 +65,9 @@ export default{
     },
     
     methods: {
-        
+        setFilter(filterBy){
+            this.filterBy = filterBy;
+
+        }
     }
 }

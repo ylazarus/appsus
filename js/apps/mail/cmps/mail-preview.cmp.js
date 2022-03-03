@@ -4,9 +4,9 @@ export default {
     <router-link :to="'/mail/'+mail.id">
     <li >
       
-        <p :class="isBold">{{mail.to}}</p>
+        <p :class="isBold">From: {{mail.from}}</p>
         <p><span class="mail-subject" :class="isBold">{{mail.subject}}</span></p>
-        <p> :class="isBold" {{sentAt}}</p>
+        <p :class="isBold" >{{sentAt}}</p>
     </li>   
     </router-link>
     `,
