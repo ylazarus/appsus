@@ -12,7 +12,7 @@ export default{
         <div class="nav-mail-container flex">
             <nav class="mail-nav flex flex-column">
                 <router-link to="/compose">+ Compose</router-link>
-                <button @click="setCurrFolder('inbox')">Inbox <span>({{unreadCount}} unread)</span></button>
+                <button class="btn" @click="setCurrFolder('inbox')">Inbox <span>({{unreadCount}} unread)</span></button>
                 <button @click="setCurrFolder('sent')">Sent</button>
             </nav>
             <section class="mail-container">
