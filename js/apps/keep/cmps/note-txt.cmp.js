@@ -6,8 +6,8 @@ export default {
         <p class="text" :contenteditable="isEditable" @keyup="saveChange">{{text}}</p>
         
         <div v-if="isUpdateMode"  class="update-note">
-        <button @click="deleteNote">Delete</button>
-            <button @click="updateNotes">Save</button>
+        <button class="btn" @click="deleteNote">Delete</button>
+        <button class="btn" @click="updateNotes">Save</button>
         </div>
     </section>
     `,

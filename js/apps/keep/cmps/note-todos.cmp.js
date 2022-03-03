@@ -11,9 +11,9 @@ export default {
         </ul>
         
         <div v-if="isUpdateMode"  class="update-note">
-            <button @click="addLine">Add line</button>
-            <button @click="deleteNote">Delete</button>
-            <button @click="updateNotes">Save</button>
+            <button class="btn" @click="addLine">Add line</button>
+            <button class="btn" @click="deleteNote">Delete</button>
+            <button class="btn" @click="updateNotes">Save</button>
         </div>
     </section>
     `,

@@ -10,8 +10,8 @@ export default {
                 Enter image url: 
                 <input type="text" placeholder="enter image url" v-model="src">
             </label>
-            <button @click="deleteNote">Delete</button>
-            <button @click="updateNotes">Save</button>
+            <button class="btn" @click="deleteNote">Delete</button>
+            <button class="btn" @click="updateNotes">Save</button>
         </div>
     </section>
     `,

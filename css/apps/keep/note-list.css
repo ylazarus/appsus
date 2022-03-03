@@ -1,19 +1,35 @@
 
+.note-list {
+    
+}
+
+.note-header {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.note-logo {
+    min-width: 10rem;
+}
 
 .note-list ul {
+    padding: 0;
+    margin: 0 auto;
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
     gap: 15px;
+    justify-content: center;
 }
 .note-list li{
-    
+    height:fit-content;
+    width: 200px;;
 }
 .note-list li>*{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid rgb(83, 83, 83);
+    border: 1px solid var(--border);
     border-radius: 10px;
     
 }

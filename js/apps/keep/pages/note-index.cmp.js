@@ -4,10 +4,11 @@ import noteFilter from "../cmps/note-filter.cmp.js"
 export default {
     template: `
     <section class="main-layout">
-
-        <h1>Keep App</h1>
-        <note-filter :types="noteTypes"></note-filter>
-        <router-link to="/keep/edit">Add Note</router-link>
+        <header class="note-header flex">
+            <h1 class="note-logo">Keep App</h1>
+            <note-filter :types="noteTypes"></note-filter>
+        </header>
+        <router-link class="btn" to="/keep/edit">Add Note</router-link>
         <router-view :types="noteTypes"></router-view>
         <note-list />
     </section>

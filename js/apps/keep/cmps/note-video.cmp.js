@@ -12,8 +12,8 @@ export default{
                 Enter video url: 
                 <input type="text" placeholder="enter video url" v-model="src">
             </label>
-            <button @click="deleteNote">Delete</button>
-            <button @click="updateNotes">Save</button>
+            <button class="btn" @click="deleteNote">Delete</button>
+            <button class="btn" @click="updateNotes">Save</button>
         </div>
     </section>
     `,

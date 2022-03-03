@@ -4,16 +4,14 @@ export default {
     props: ['types'],
     template: `
     <section class="note-filter">
-        <label> Search: 
-            <input type="search" placeholder="Search..." v-model="filterBy.search">
-        </label>
+            <input type="search" placeholder="Search note" v-model="filterBy.search">
         <label>
             <select v-model="filterBy.type">
             <option v-for="(value, name) in types" :value="name">{{value}}</option>
             </select>
         </label>
-        <button @click="setFilter">Filter</button>
-        <button @click="resetFilter">Reset filter</button>
+        <button class="btn" @click="setFilter">Filter</button>
+        <button class="btn" @click="resetFilter">Reset filter</button>
     </section>
     `,
     data() {
