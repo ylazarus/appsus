@@ -1,18 +1,22 @@
 import { router } from "./router.js";
+import appHeader from "./cmps/app-header.cmp.js";
+import appFooter from "./cmps/app-footer.cmp.js";
+
 
 const options = {
     template: `
         <section>
-            <!-- <app-header /> -->
+            <app-header />
             <!-- <user-msg /> -->
             <router-view />
-            <!-- <app-footer /> -->
+            <app-footer />
         </section>
     `,
-    // components:{
-    //    appHeader,
+    components:{
+       appHeader,
+       appFooter
     //    userMsg 
-    // }
+    }
 };
 
 const app = Vue.createApp(options);

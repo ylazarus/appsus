@@ -1,0 +1,38 @@
+.header-container{
+    background-color: var(--theme);
+}
+
+.app-header{
+    height: 100px;
+    padding: 0;
+    align-items: center;
+}
+
+
+
+.appsus-link{
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    height: 100%;
+    padding: 0 .5rem;
+}
+.appsus-link:hover{
+    background-color: var(--hover);
+}
+
+.header-container li{
+    display: flex;
+    height: 100px;
+    align-items: center;
+    padding: 0 .5rem;
+}
+
+.header-links{
+    gap: 1.5rem;
+    font-size: 1.5em;
+}
+
+.header-links >*:hover{
+    background-color: var(--hover);
+}

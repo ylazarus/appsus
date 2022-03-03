@@ -5,6 +5,7 @@
     margin-left: auto;
     padding: .5rem;
     align-items: baseline;
+    border-radius: .33rem;
 }
 
 .mail-display-card .btn{
@@ -17,4 +18,13 @@
 
 .mail-txt{
     height: 50vh;
+}
+
+.first-buttons-row {
+    justify-content: center;
+    width: 100%;
+}
+.second-buttons-row {
+    justify-content: center;
+    width: 100%;
 }

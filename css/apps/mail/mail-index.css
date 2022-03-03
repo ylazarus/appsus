@@ -7,6 +7,7 @@
 
 .mail-logo{
     min-width: 10rem;
+    margin: 0
 }
 
 .mail-page-container {
@@ -28,25 +29,24 @@
 
 }
 
-.email-list > *:not(:last-child) {
-  margin-right: 1.5rem;
+.email-list {
+  padding-right: 1rem;
 }
 
 .mail-from {
-  width: 20rem;
-  flex-basis: 15rem;
+  flex-basis: 10rem;
 }
 
 .mail-subject {
   flex-grow: 1;
   white-space: nowrap;
-  width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .sent-at {
-  flex-basis: 15rem;
+  flex-basis: 6rem;
+  text-align: right;
 }
 
 /* .nav-mail-container {
@@ -58,12 +58,26 @@
   background-color: var(--bgc);
   flex-grow: 1;
   margin-left: 2rem;
+
+}
+
+.read-inputs{
+  gap: 1rem;
+}
+
+.sort-inputs{
+  gap: 1rem;
 }
 
 .mail-nav {
   height: 7rem;
   justify-content: space-between;
   min-width: 10rem;
+}
+
+.mail-search{
+  height: 2rem;
+  border-radius: .25rem;
 }
 
 .bold {

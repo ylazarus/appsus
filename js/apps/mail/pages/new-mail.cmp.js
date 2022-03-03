@@ -6,17 +6,13 @@ export default{
     template: `
     <h1 class="mail-compose-title">Compose Mail</h1>
     <form class="mail-compose-card flex flex-column" @submit.prevent="send">
-        <!-- <label>To: -->
             <input class="mail-compose-to" type="email" required v-model="message.to" placeholder="To: example@example.com">
-        <!-- </label> -->
-        <!-- <br> -->
-        <!-- <label>Subject: -->
             <input class="mail-compose-subject" type="text" v-model="message.subject" placeholder="Subject">
-        <!-- </label> -->
-        <br>
-        <textarea v-model="message.txt" class="mail-compose-txt"></textarea>
-            <br>
-            <button class="btn" >Send</button>
+            <textarea v-model="message.txt" class="mail-compose-txt"></textarea>
+            <div class="mail-compose-buttons flex ">
+                <button class="btn" >Send</button>
+                <router-link class="btn" to="/mail">Back</router-link>
+            </div>
     </form>
     `,
     data() {

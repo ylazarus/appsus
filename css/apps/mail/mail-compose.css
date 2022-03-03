@@ -5,9 +5,14 @@
     margin-left: auto;
     padding: 1rem;
     align-items: baseline;
+    border-radius: .33rem;
+    gap: 1rem;
 }
 
-
+.mail-compose-buttons{
+    width: 100%;
+    justify-content: space-between;
+}
 
 .mail-compose-title{
     text-align: center;
@@ -15,15 +20,22 @@
 
 .mail-compose-to{
     width: 100%;
-    margin-bottom: 1rem;
-
+    height: 2rem;
+    border-radius: .25rem;
+    
+    
 }
 .mail-compose-subject{
+    height: 2rem;
     width: 100%;
+    border-radius: .25rem;
+
 }
 
 .mail-compose-txt{
     height: 50vh;
     width: 100%;
     resize: none;
+    border-radius: .25rem;
+
 }

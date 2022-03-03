@@ -5,12 +5,12 @@ export default {
         <input class="mail-search" v-model="filterBy.txt" title="Search Mail" type="text" placeholder="Search Mail">
         <button class="btn" @click.stop="setFilter">Search</button>
     </div>
-      <div class="read-inputs">
-        <label>Show Read<input @change="setFilter" value="read" v-model="filterBy.readUnread" type="checkbox" title="Show Read"></label>
-        <label>Show Unread<input @change="setFilter" value="unread" v-model="filterBy.readUnread" type="checkbox" title="Show Unread"></label>
+      <div class="read-inputs flex">
+        <label><input @change="setFilter" value="read" v-model="filterBy.readUnread" type="checkbox" title="Show Read">Show Read</label>
+        <label><input @change="setFilter" value="unread" v-model="filterBy.readUnread" type="checkbox" title="Show Unread">Show Unread</label>
       </div>
-      <div class="sort-inputs">  
-        <label><input type="radio" value="createdDate" v-model="sortBy" @change="setSort">Sort Chronologically</label> |
+      <div class="sort-inputs flex">  
+        <label><input type="radio" value="createdDate" v-model="sortBy" @change="setSort">Sort Chronologically</label>
         <label><input type="radio" value="subject" v-model="sortBy" @change="setSort">Sort By Subject</label>
       </div>
       </section>
