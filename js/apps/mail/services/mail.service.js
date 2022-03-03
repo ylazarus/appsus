@@ -74,6 +74,7 @@ function _createMails() {
         isRead: false,
         sentAt: Date.now() - 1000 * 60 * 60 * 24,
         to: "user@apsus.com",
+        from: "tester@test.com"
       },
       {
         id: storageService._makeId(),
@@ -82,6 +83,7 @@ function _createMails() {
         isRead: false,
         sentAt: Date.now() - 2 * 1000 * 60 * 60 * 24,
         to: "user@apsus.com",
+        from: "tester@test.com"
       },
       {
         id: storageService._makeId(),
@@ -90,6 +92,7 @@ function _createMails() {
         isRead: false,
         sentAt: Date.now() - 3 * 1000 * 60 * 60 * 24,
         to: "user@apsus.com",
+        from: "tester@test.com"
       },
       {
         id: storageService._makeId(),
@@ -98,6 +101,7 @@ function _createMails() {
         isRead: false,
         sentAt: Date.now() - 3 * 1000 * 60 * 60 * 24,
         to: "momo@momo.com",
+        from: "user@apsus.com"
       },
     ]
   }

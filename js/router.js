@@ -28,7 +28,7 @@ const routes = [
       component: displayedMail
     },
     {
-      path: "/compose",
+      path: "/compose/:mailId?",
       component: newMail
     },
     {

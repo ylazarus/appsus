@@ -10,6 +10,7 @@ export default {
         <p>{{mail.txt}}</p>
         <button @click="markUnread">Mark as Unread</button>
         <button @click="deleteMessage">Delete Message</button>
+        <router-link :to="'/compose/'+mail.id">Reply</router-link>
         <router-link :to="'/mail/'+mail.prevMailId">Prev Email</router-link> | 
         <router-link :to="'/mail/'+mail.nextMailId">Next Email</router-link> | 
         <router-link to="/mail">Back</router-link>
@@ -53,6 +54,10 @@ export default {
         eventBus.emit("show-msg", { txt: "Your Message Has Been Deleted" })
         this.$router.push("/mail")
       })
+    },
+    reply(){
+
     }
+
   },
 }
