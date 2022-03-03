@@ -1,4 +1,33 @@
 
-.note-index .add-btn {
+.note-index {
+    /* background-color: var(--page); */
+}
+
+.add-btn {
+    display: block;
+    margin: 1rem auto;
     
+}
+.add-note {
+    width: 60%;
+    margin: 1rem auto;
+    font-size: 1.5rem;
+}
+.add-note label{
+    margin: 1rem auto;
+    font-size: 1.5rem;
+}
+
+.add-note select{
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+
+.add-note .note-to-add {
+    background-color: var(--bgc);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+    padding: 0.5rem;
 }
