@@ -3,7 +3,7 @@ import noteFilter from "../cmps/note-filter.cmp.js"
 
 export default {
     template: `
-    <section class="main-layout note-index">
+    <section class="main-layout note-index main-app">
         <header class="note-header flex">
             <h1 class="note-logo">Keep App</h1>
             <note-filter :types="noteTypes"></note-filter>

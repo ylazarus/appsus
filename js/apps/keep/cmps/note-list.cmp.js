@@ -24,7 +24,11 @@ export default {
     },
     created() {
         this.getNotes()
-        this.unsubscribe1 = eventBus.on('updateList', this.getNotes)
+        this.unsubscribe1 = eventBus.on('updateList',(()=>{
+            this.getNotes()
+            // this.$forceUpdate()
+
+        }) )
         this.unsubscribe2 = eventBus.on('setFilter', this.setFilter)
     },
     methods: {

@@ -5,6 +5,7 @@ import noteTxt from "./note-txt.cmp.js"
 import noteTodos from "./note-todos.cmp.js"
 import noteImg from "./note-img.cmp.js"
 import noteVideo from "./note-video.cmp.js"
+import noteVideoCmp from "./note-video.cmp.js"
 
 export default {
     props: ['types'],
@@ -63,8 +64,11 @@ export default {
                 notesService.update({ ...this.noteToEdit })
                     .then((note) => {
                         eventBus.emit('updateList')
-                        this.$router.push('/keep')
+                        
+                        // this.$forceUpdate()
+                        
                     })
+                    .then(()=>this.$router.push('/keep'))
 
             } else {
                 console.log('save');

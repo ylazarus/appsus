@@ -8,6 +8,7 @@
   padding: 1rem;
 }
 
+
 .page-as-card-layout {
   background-color: var(--bgc);
   max-width: 500px;
@@ -18,6 +19,14 @@
   border-radius: 0.33rem;
   gap: 1rem;
 } */
+
+/* main-height */
+
+.main-height {
+  min-height: 79vh;
+  padding: 1rem;
+}
+
 
 /* flex */
 

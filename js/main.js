@@ -9,7 +9,7 @@ const options = {
         <section>
             <app-header />
             <user-msg />
-            <router-view />
+            <router-view class="main-height"/>
             <app-footer />
         </section>
     `,

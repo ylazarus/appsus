@@ -4,6 +4,7 @@ import { eventBus } from "../../../services/eventBus-service.js"
 
 export default{
     template: `
+    <main class="main-height">
     <h1 class="mail-compose-title">Compose Mail</h1>
     <form class="mail-compose-card page-as-card-layout flex flex-column" @submit.prevent="send">
             <input class="mail-compose-to" type="email" required v-model="message.to" placeholder="To: example@example.com">
@@ -14,6 +15,7 @@ export default{
                 <router-link class="btn" to="/mail">Back</router-link>
             </div>
     </form>
+    </main>
     `,
     data() {
         return {
