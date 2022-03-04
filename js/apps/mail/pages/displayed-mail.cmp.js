@@ -11,9 +11,12 @@ export default {
             <p class="mail-txt">{{mail.txt}}</p>
               
             <div class="first-buttons-row flex ">
+
                 <button class="btn" @click="markUnread">Mark as Unread</button>
                 <button class="btn" @click="deleteMessage">Delete Message</button>
                 <router-link class="btn" :to="'/compose/'+mail.id">Reply</router-link>
+                <router-link class="btn" :to="'/keep/edit/'+mail.id">Save in Notesus</router-link>
+
             </div>
               
             <div class="second-buttons-row flex ">
