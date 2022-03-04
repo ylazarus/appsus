@@ -16,8 +16,8 @@ export default {
                 <option v-for="(value, name) in NoteTypes" :value="name">{{value}}</option>
             </select>
         </label>
-            <component :is="selectedType" class="note-to-add" :info="noteToEdit.info" :colorsList="colorsList" @update="saveNote" @delete="deleteNote"></component>
-            <router-link to="/keep" class="btn">Close</router-link>
+            <component :is="selectedType" class="note-to-add" :info="noteToEdit.info" :colorsList="colorsList" @send="sendMile" @update="saveNote" @delete="deleteNote"></component>
+            <router-link title="Close" to="/keep" class="btn"><i class="fa-solid fa-square-xmark"></i></router-link>
     </section>
     `,
     components: {
@@ -52,8 +52,8 @@ export default {
                 .catch(() => {
                     mailService.get(this.noteId).then((mail) => {
                         this.noteToEdit = notesService.getEmptyNote(),
-                        this.noteToEdit.id = mail.id
-                        this.noteToEdit.typeNote = 'noteTxt'               
+                            this.noteToEdit.id = mail.id
+                        this.noteToEdit.typeNote = 'noteTxt'
                         this.selectedType = this.noteToEdit.typeNote
                         this.noteToEdit.info.subject = mail?.subject || 'no subject'
                         this.noteToEdit.info.text = mail?.txt || 'no body'
@@ -74,23 +74,25 @@ export default {
             this.noteToEdit.info.isUpdateMode = true
             this.isUpdate = !this.isUpdate
         },
-        saveNote(info) {
+        saveNote(info, send) {
             this.noteToEdit.info = info
-            this.noteToEdit.id
             if (this.noteToEdit.id) {
                 console.log('update');
                 notesService.update({ ...this.noteToEdit })
                     .then((note) => {
                         eventBus.emit('updateList')
                         eventBus.emit("show-msg", { txt: "Update successfully" })
-
+                        return note
                         // this.$forceUpdate()
 
                     })
-                    .then(() => this.$router.push('/keep'))
+                .then((note) => {
+                    if (!send){
+                        this.$router.push('/keep')
+                    } else this.$router.push('/compose/'+note.id)
+                 })
 
             } else {
-                console.log('save');
                 notesService.save({ ...this.noteToEdit })
                     .then((note) => {
                         eventBus.emit('updateList')
@@ -99,6 +101,10 @@ export default {
                     })
 
             }
+        },
+        sendMile(info) {
+            this.noteToEdit.info = info
+            this.saveNote(info, 'send')
         },
         deleteNote() {
             if (!this.noteToEdit.id) {

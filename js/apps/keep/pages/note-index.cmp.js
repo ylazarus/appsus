@@ -8,7 +8,7 @@ export default {
             <h1 class="note-logo">Keepsus</h1>
             <note-filter :types="noteTypes"></note-filter>
         </header>
-        <router-link class="btn add-btn" to="/keep/edit">Add Note</router-link>
+        <router-link title="Add note" class="btn add-btn" to="/keep/edit">Add note</router-link>
         <router-view :types="noteTypes"></router-view>
         <note-list />
     </section>

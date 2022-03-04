@@ -8,8 +8,6 @@ export default {
         <ul v-if="notesToShow" class="grid">
             <li class="note-preview" v-for="note in notesToShow">
                 <note-preview :note="note" :key="note.id"/>
-                <router-link class="btn" :to="'/compose/'+note.id">Send as Email</router-link>
-
             </li>
         </ul>
     </section>

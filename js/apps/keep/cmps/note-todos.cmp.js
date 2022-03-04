@@ -18,6 +18,8 @@ export default {
             <div v-if="isOpenColors" class="colors">
                 <button v-for="(value, name) in colorsList" :class="'color-btn-'+name" :data-name="value" @click="changeColor"></button>
             </div>
+            <button title="Send as Email" class="btn" @click="sendMile"><i class="fa-solid fa-paper-plane"></i></button>
+
         </div>
     </section>
     `,
@@ -61,6 +63,11 @@ export default {
         },
         deleteNote() {
             this.$emit('delete', { ...this.info })
+        },
+        sendMile() {
+            this.info.list = this.todosList
+            this.info.isUpdateMode = false
+            this.$emit('send', { ...this.info })
         }
     },
 }
