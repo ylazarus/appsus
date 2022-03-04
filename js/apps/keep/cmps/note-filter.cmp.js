@@ -5,13 +5,16 @@ export default {
     template: `
     <section class="note-filter">
             <input type="search" placeholder="Search note" v-model="filterBy.search">
-        <label>
+        <label> Type of notes:
             <select v-model="filterBy.type">
             <option v-for="(value, name) in types" :value="name">{{value}}</option>
             </select>
         </label>
-        <button class="btn" @click="setFilter">Filter</button>
-        <button class="btn" @click="resetFilter">Reset filter</button>
+        <div class="filter-buttons">
+            <button class="btn" @click="setFilter">Filter</button>
+            <button class="btn" @click="resetFilter">Reset filter</button>
+
+        </div>
     </section>
     `,
     data() {
