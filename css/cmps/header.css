@@ -1,40 +1,31 @@
-.header-container{
-    background-color: var(--theme);
+.header-container {
+  background-color: var(--theme);
 }
 
-.header-container a{
-    height: 100%;
-    line-height: 100px;
-    /* align-self: center; */
+.hamburger-menu{
+    margin-right: 2rem;
 }
 
-.app-header{
-    height: 100px;
-    padding: 0;
-    align-items: center;
+.close-menu{
+    width: 10px;
+    /* continue here after break */
+}
+
+.app-header {
+  height: 100px;
+  padding: 0;
+  align-items: center;
+}
+
+.appsus-link {
+  display: flex;
+  align-items: center;
+}
+.appsus-link:hover {
+  background-color: var(--hover);
 }
 
 
-
-.appsus-link{
-    display: flex;
-    align-items: center;
-    font-size: 1.5em;
-    height: 100%;
-    padding: 0 .5rem;
-}
-.appsus-link:hover{
-    background-color: var(--hover);
-}
-
-.header-links{
-    gap: 1.5rem;
-    font-size: 1.5em;
-    height: 100%;
-    /* align-items: center; */
-    
-}
-
-.header-links >*:hover{
-    background-color: var(--hover);
+.header-links > *:hover {
+  background-color: var(--hover);
 }
