@@ -4,14 +4,15 @@ export default {
     <section class="note-txt" :style="backGroundColor">
         <h3 class="subject" data-name="subject" :contenteditable="isEditable" @keyup="saveChange">{{subject}}</h3>
         <p class="text" data-name="text" :contenteditable="isEditable" @keyup="saveChange">{{text}}</p>
-        <div v-if="isUpdateMode"  class="update-note">
-            <button class="btn" @click="deleteNote">Delete</button>
-            <button class="btn" @click="updateNotes">Save</button>
-            <button class="btn" @click="isOpenColors = !isOpenColors">Color</button>
+        <div v-if="isUpdateMode"  class="update-note edit-buttons">
+            <button class="btn" @click="deleteNote"><i class="fa-solid fa-trash-can"></i></button>
+            <button class="btn" @click="updateNotes"><i class="fa-solid fa-v"></i></button>
+            <button class="btn" @click="isOpenColors = !isOpenColors"><i class="fa-solid fa-palette"></i></button>
             <div v-if="isOpenColors" class="colors">
                 <button v-for="(value, name) in colorsList" :class="'color-btn-'+name" :data-name="value" @click="changeColor"></button>
             </div>
             <button title="Send as Email" class="btn" @click="sendMile"><i class="fa-solid fa-paper-plane"></i></button>
+            <router-link title="Close" to="/keep" class="btn"><i class="fa-solid fa-xmark"></i></router-link>
 
         </div>
     </section>

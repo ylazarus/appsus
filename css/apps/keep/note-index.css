@@ -80,6 +80,13 @@ position: relative;
 
 }
 
+.edit-buttons {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
 .colors {
     position: absolute;
     width:fit-content;
