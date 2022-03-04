@@ -1,6 +1,6 @@
 
 .note-index {
-    /* background-color: var(--page); */
+position: relative;
 }
 
 .add-btn {
@@ -9,9 +9,12 @@
     
 }
 .add-note {
+    position: absolute;
     width: 60%;
+    /* height: 300px; */
     margin: 1rem auto;
     font-size: 1.5rem;
+    background-color: var(--white);
 }
 .add-note label{
     margin: 1rem auto;
@@ -25,9 +28,7 @@
 
 .add-note .note-to-add {
     background-color: var(--bgc);
-
     border: 1px solid var(--border);
-
     border-radius: 10px;
     padding: 0.5rem;
 }

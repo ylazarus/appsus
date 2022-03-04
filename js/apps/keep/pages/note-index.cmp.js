@@ -5,7 +5,7 @@ export default {
     template: `
     <section class="main-layout note-index main-app">
         <header class="note-header flex">
-            <h1 class="note-logo">Keep App</h1>
+            <h1 class="note-logo">Notesus</h1>
             <note-filter :types="noteTypes"></note-filter>
         </header>
         <router-link class="btn add-btn" to="/keep/edit">Add Note</router-link>

@@ -10,13 +10,14 @@ import noteVideoCmp from "./note-video.cmp.js"
 export default {
     props: ['types'],
     template: `
-    <section class="add-note">
+    <section class="add-note flex flex-column">
         <label v-if="!isUpdate">Select a note type:
             <select v-model="selectedType" @change="renderNote" >
                 <option v-for="(value, name) in NoteTypes" :value="name">{{value}}</option>
             </select>
         </label>
             <component :is="selectedType" class="note-to-add" :info="noteToEdit.info" @update="saveNote" @delete="deleteNote"></component>
+            <router-link to="/keep" class="btn">Close</router-link>
     </section>
     `,
     components: {
