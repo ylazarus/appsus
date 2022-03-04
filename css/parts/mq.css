@@ -54,13 +54,23 @@
 
 @media (min-width: 500px) {
   .page-as-card-layout {
-    width: 400px;
+    background-color: var(--bgc);
+    max-width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0.5rem;
+    align-items: baseline;
+    border-radius: 0.33rem;
+    gap: 1rem;
   }
 }
 
 @media (min-width: 640px) {
     .hamburger-menu {
         display: none;
+    }
+    .close-menu{
+      display: none;
     }
     .header-container a {
         line-height: 100px;
@@ -74,8 +84,13 @@
   }
 
   .page-as-card-layout {
-    width: 500px;
+    background-color: var(--bgc);
+    max-width: 500px;
     margin-right: auto;
     margin-left: auto;
+    padding: 0.5rem;
+    align-items: baseline;
+    border-radius: 0.33rem;
+    gap: 1rem;
   }
 }
