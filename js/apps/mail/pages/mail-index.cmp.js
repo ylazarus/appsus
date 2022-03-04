@@ -11,9 +11,9 @@ export default{
     </header>
         <div class="nav-mail-container flex">
             <nav class="mail-nav flex flex-column">
-                <router-link class="btn" to="/compose">+ Compose</router-link>
-                <button class="btn" @click="setCurrFolder('inbox')">Inbox <span>({{unreadCount}} unread)</span></button>
-                <button class="btn" @click="setCurrFolder('sent')">Sent</button>
+                <router-link title="Compose" class="btn" to="/compose"><i class="fa-solid fa-plus"></i>&nbsp Compose</router-link>
+                <button class="btn" @click="setCurrFolder('inbox')"><i class="fa-solid fa-inbox"> &nbsp <span>({{unreadCount}} unread)</span></button>
+                <button class="btn" @click="setCurrFolder('sent')">Sent Mail</button>
             </nav>
             <section class="mail-container">
                 <mail-list :mails="mailsToShow"/>

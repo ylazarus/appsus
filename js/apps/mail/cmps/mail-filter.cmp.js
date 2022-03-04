@@ -3,7 +3,7 @@ export default {
     <section class="search-options flex flex-column">
       <div class="search-bar">
         <input class="mail-search" v-model="filterBy.txt" title="Search Mail" type="text" placeholder="Search Mail">
-        <button class="btn" @click.stop="setFilter">Search</button>
+        <button class="btn" @click.stop="setFilter"><i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
       <div class="read-inputs flex">
         <label><input @change="setFilter" value="read" v-model="filterBy.readUnread" type="checkbox" title="Show Read">Show Read</label>

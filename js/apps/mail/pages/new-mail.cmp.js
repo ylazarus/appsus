@@ -11,8 +11,8 @@ export default {
             <input class="mail-compose-subject" type="text" v-model="message.subject" placeholder="Subject">
             <textarea v-model="message.txt" class="mail-compose-txt"></textarea>
             <div class="mail-compose-buttons flex ">
-                <button class="btn" >Send</button>
-                <router-link class="btn" to="/mail">Back</router-link>
+                <button title="Send" class="btn" ><i class="fa-solid fa-paper-plane"></i></button>
+                <router-link title="Back To Inbox" class="btn" to="/mail"><i class="fa-solid fa-inbox"></router-link>
             </div>
     </form>
     </main>

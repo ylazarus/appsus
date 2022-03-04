@@ -12,17 +12,17 @@ export default {
               
             <div class="first-buttons-row flex ">
 
-                <button class="btn" @click="markUnread">Mark as Unread</button>
-                <button class="btn" @click="deleteMessage">Delete Message</button>
-                <router-link class="btn" :to="'/compose/'+mail.id">Reply</router-link>
-                <router-link class="btn" :to="'/keep/edit/'+mail.id">Save in Notesus</router-link>
+                <button class="btn" title="Mark Unread" @click="markUnread"><i class="fa-solid fa-envelope"></i></button>
+                <button class="btn" title="Delete Message" @click="deleteMessage"><i class="fa-solid fa-trash-can"></i></button>
+                <router-link class="btn" title="Reply" :to="'/compose/'+mail.id"><i class="fa-solid fa-reply"></i></router-link>
+                <router-link class="btn" title="Save in Keepsus" :to="'/keep/edit/'+mail.id"><i class="fa-solid fa-paper-plane"></i></router-link>
 
             </div>
               
             <div class="second-buttons-row flex ">
-                <router-link class="btn" :to="'/mail/'+mail.prevMailId">Prev Email</router-link>
-                <router-link class="btn" :to="'/mail/'+mail.nextMailId">Next Email</router-link>
-                <router-link class="btn" to="/mail">Back To Inbox</router-link>
+                <router-link class="btn" title="Previous Email" :to="'/mail/'+mail.prevMailId"><i class="fa-solid fa-angles-left"></i></router-link>
+                <router-link class="btn" title="Next Email" :to="'/mail/'+mail.nextMailId"><i class="fa-solid fa-angles-right"></router-link>
+                <router-link class="btn" title="Back To Inbox" to="/mail"><i class="fa-solid fa-inbox"></i></router-link>
             </div>
           </div>
         </section>
