@@ -1,4 +1,5 @@
 import { notesService } from "../services/note.service.js"
+import { mailService } from "../../mail/services/mail.service.js"
 import { eventBus } from "../../../services/eventBus-service.js"
 
 import noteTxt from "./note-txt.cmp.js"
@@ -42,6 +43,17 @@ export default {
                     this.selectedType = note.typeNote
                     this.renderNote()
                 })
+                .catch(() => {
+                    mailService.get(this.noteId).then((mail) => {
+                        this.noteToEdit = notesService.getEmptyNote(),
+                        this.noteToEdit.id = mail.id
+                        this.noteToEdit.typeNote = 'noteTxt'               
+                        this.selectedType = this.noteToEdit.typeNote
+                        this.noteToEdit.info.subject = mail?.subject || 'no subject'
+                        this.noteToEdit.info.text = mail?.txt || 'no body'
+                        this.renderNote()
+                    })
+                })
         }
     },
     methods: {
@@ -65,25 +77,25 @@ export default {
                     .then((note) => {
                         eventBus.emit('updateList')
                         eventBus.emit("show-msg", { txt: "Update successfully" })
-                        
+
                         // this.$forceUpdate()
-                        
+
                     })
-                    .then(()=>this.$router.push('/keep'))
-                    
-                } else {
-                    console.log('save');
-                    notesService.save({ ...this.noteToEdit })
+                    .then(() => this.$router.push('/keep'))
+
+            } else {
+                console.log('save');
+                notesService.save({ ...this.noteToEdit })
                     .then((note) => {
                         eventBus.emit('updateList')
                         eventBus.emit("show-msg", { txt: "Save successfully" })
                         this.$router.push('/keep')
                     })
-                    
-                }
-            },
-            deleteNote() {
-                if (!this.noteToEdit.id){
+
+            }
+        },
+        deleteNote() {
+            if (!this.noteToEdit.id) {
                 eventBus.emit("show-msg", { txt: "Delete successfully" })
                 this.$router.push('/keep')
 
