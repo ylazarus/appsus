@@ -3,9 +3,9 @@ import { eventBus } from "../../../services/eventBus-service.js"
 
 export default {
   template: `
-        <section class="displayed-email-page main-layout">
+        <section class="displayed-email-page  main-layout">
           <h1 class="mail-title">Email</h1>
-          <div class="mail-display-card flex flex-column">
+          <div class="mail-display-card page-as-card-layout flex flex-column">
 
             <h1>Subject: {{mail.subject}}</h1>
             <h3>From: {{mail.from}}</h3>
