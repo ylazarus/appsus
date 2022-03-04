@@ -16,7 +16,7 @@ export default {
                 <option v-for="(value, name) in NoteTypes" :value="name">{{value}}</option>
             </select>
         </label>
-            <component :is="selectedType" class="note-to-add" :info="noteToEdit.info" @update="saveNote" @delete="deleteNote"></component>
+            <component :is="selectedType" class="note-to-add" :info="noteToEdit.info" :colorsList="colorsList" @update="saveNote" @delete="deleteNote"></component>
             <router-link to="/keep" class="btn">Close</router-link>
     </section>
     `,
@@ -32,7 +32,13 @@ export default {
             NoteTypes: this.types,
             isUpdate: null,
             selectedType: null,
-            noteId: this.$route.params.noteId
+            noteId: this.$route.params.noteId,
+            colorsList: {
+                yellow: '#ebeb81',
+                pink: '#d87093',
+                green: '#adff2f',
+                white: '#ffffff',
+            }
         }
     },
     created() {

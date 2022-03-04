@@ -1,5 +1,5 @@
 export default {
-    props: ['info'],
+    props: ['info', 'colorsList'],
     template: `
     <section class="note-img"  :style="backGroundColor">
         <h3 class="subject" data-name="subject" :contenteditable="isEditable" @keyup="saveChange">{{subject}}</h3>
@@ -12,6 +12,10 @@ export default {
             </label>
             <button class="btn" @click="deleteNote">Delete</button>
             <button class="btn" @click="updateNotes">Save</button>
+            <button class="btn" @click="isOpenColors = !isOpenColors">Color</button>
+            <div v-if="isOpenColors" class="colors">
+                <button v-for="(value, name) in colorsList" :class="'color-btn-'+name" :data-name="value" @click="changeColor"></button>
+            </div>
         </div>
     </section>
     `,
@@ -20,7 +24,9 @@ export default {
             subject: this.info.subject,
             src: this.info.image,
             style: this.info.style,
-            isUpdateMode: this.info.isUpdateMode
+            isUpdateMode: this.info.isUpdateMode,
+            isOpenColors: false
+
         }
     },
     computed: {
@@ -32,6 +38,10 @@ export default {
         }
     },
     methods: {
+        changeColor(ev) {
+            this.info.style.backGroundColor = ev.target.dataset.name
+            this.isOpenColors = false
+        },
         saveChange(ev) {
             this.info[ev.target.dataset.name] = ev.target.innerText
         },

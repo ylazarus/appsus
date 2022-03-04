@@ -3,7 +3,6 @@
 @import './parts/vars.css';
 @import './parts/fonts.css';
 @import './parts/helpers.css';
-@import './parts/mq.css';
 
 @import './cmps/app-home.css';
 @import './cmps/user-msg.css';
@@ -17,3 +16,5 @@
 @import './apps/mail/mail-index.css';
 @import './apps/mail/mail-view.css';
 @import './apps/mail/mail-compose.css';
+
+@import './parts/mq.css';

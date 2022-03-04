@@ -4,7 +4,7 @@ import noteFilter from "../cmps/note-filter.cmp.js"
 export default {
     template: `
     <section class="main-layout note-index main-app">
-        <header class="note-header flex">
+        <header class="note-header flex flex-column">
             <h1 class="note-logo">Keepsus</h1>
             <note-filter :types="noteTypes"></note-filter>
         </header>

@@ -1,5 +1,5 @@
 export default {
-    props: ['info'],
+    props: ['info', 'colorsList'],
     template: `
     <section class="note-todos" :style="backGroundColor">
     <h3 class="subject" data-name="subject" :contenteditable="isEditable" @keyup="saveChange">{{subject}}</h3>
@@ -14,6 +14,10 @@ export default {
             <button class="btn" @click="addLine">Add line</button>
             <button class="btn" @click="deleteNote">Delete</button>
             <button class="btn" @click="updateNotes">Save</button>
+            <button class="btn" @click="isOpenColors = !isOpenColors">Color</button>
+            <div v-if="isOpenColors" class="colors">
+                <button v-for="(value, name) in colorsList" :class="'color-btn-'+name" :data-name="value" @click="changeColor"></button>
+            </div>
         </div>
     </section>
     `,
@@ -23,6 +27,8 @@ export default {
             todosList: this.info.list,
             style: this.info.style,
             isUpdateMode: this.info.isUpdateMode,
+            isOpenColors: false
+
         }
     },
     created() {
@@ -36,6 +42,10 @@ export default {
         }
     },
     methods: {
+        changeColor(ev) {
+            this.info.style.backGroundColor = ev.target.dataset.name
+            this.isOpenColors = false
+        },
         addLine() {
             this.todosList[this.todosList.length] = { txt: 'wat todo?', isDone: false, idx: this.todosList.length }
         },
