@@ -1,12 +1,9 @@
 
 .note-list {
-    
+    /* border-top: 1px solid var(--border); */
 }
 
-.note-header {
-    margin-left: 2rem;
-    margin-right: 2rem;
-}
+
 
 .note-logo {
     min-width: 10rem;
@@ -18,11 +15,15 @@
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fill, 230px);
-    gap: 15px;
+    gap: 20px;
     justify-content: center;
 }
 .note-list .note-preview{
     height:fit-content;
+    cursor: pointer;
+}
+.note-list .note-preview section:hover{
+    box-shadow: 0px 0px 10px 0px #443d3a;
 }
 .note-list .note-preview>*{
     background-color: var(--bgc);

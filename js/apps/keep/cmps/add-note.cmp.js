@@ -5,7 +5,6 @@ import noteTxt from "./note-txt.cmp.js"
 import noteTodos from "./note-todos.cmp.js"
 import noteImg from "./note-img.cmp.js"
 import noteVideo from "./note-video.cmp.js"
-import noteVideoCmp from "./note-video.cmp.js"
 
 export default {
     props: ['types'],
@@ -65,24 +64,27 @@ export default {
                 notesService.update({ ...this.noteToEdit })
                     .then((note) => {
                         eventBus.emit('updateList')
+                        eventBus.emit("show-msg", { txt: "Update successfully" })
                         
                         // this.$forceUpdate()
                         
                     })
                     .then(()=>this.$router.push('/keep'))
-
-            } else {
-                console.log('save');
-                notesService.save({ ...this.noteToEdit })
+                    
+                } else {
+                    console.log('save');
+                    notesService.save({ ...this.noteToEdit })
                     .then((note) => {
                         eventBus.emit('updateList')
+                        eventBus.emit("show-msg", { txt: "Save successfully" })
                         this.$router.push('/keep')
                     })
-
-            }
-        },
-        deleteNote() {
-            if (!this.noteToEdit.id){
+                    
+                }
+            },
+            deleteNote() {
+                if (!this.noteToEdit.id){
+                eventBus.emit("show-msg", { txt: "Delete successfully" })
                 this.$router.push('/keep')
 
                 return
