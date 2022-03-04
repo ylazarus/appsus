@@ -71,12 +71,12 @@ function _createMails() {
     mails = [
       {
         id: storageService._makeId(),
-        subject: "Test Email 1",
+        subject: "Test Email 1 long subject",
         txt: "This is test email 1, how are you today?",
         isRead: false,
         sentAt: Date.now() - 1000 * 60 * 60 * 24,
         to: "user@appsus.com",
-        from: "tester@test.com"
+        from: "tester123456789@test.com"
       },
       {
         id: storageService._makeId(),

@@ -10,7 +10,7 @@ export default {
         <label><input @change="setFilter" value="unread" v-model="filterBy.readUnread" type="checkbox" title="Show Unread">Show Unread</label>
       </div>
       <div class="sort-inputs flex">  
-        <label><input type="radio" value="createdDate" v-model="sortBy" @change="setSort">Sort Chronologically</label>
+        <label><input type="radio" value="createdDate" v-model="sortBy" @change="setSort">Sort By Date</label>
         <label><input type="radio" value="subject" v-model="sortBy" @change="setSort">Sort By Subject</label>
       </div>
       </section>

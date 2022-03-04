@@ -54,7 +54,10 @@ export default {
     },
     markUnread() {
       this.mail.isRead = false
-      mailService.save(this.mail).then((mail) => (this.mail = mail))
+      mailService.save(this.mail).then((mail) => {
+        this.mail = mail
+        eventBus.emit("show-msg", { txt: "Marked Unread" })
+      })
     },
     deleteMessage() {
       mailService.deleteMail(this.mail.id).then((mail) => {
