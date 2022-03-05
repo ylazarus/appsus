@@ -8,7 +8,7 @@ export default {
             <h1 class="note-logo">Keepsus</h1>
             <note-filter :types="noteTypes"></note-filter>
         </header>
-        <router-link title="Add note" class="btn add-btn" to="/keep/edit">Add note</router-link>
+        <router-link class="btn add-btn" :to="routeLink" @click="isEdit = !isEdit">{{routeTxt}}</router-link>
         <router-view :types="noteTypes"></router-view>
         <note-list />
     </section>
@@ -24,7 +24,16 @@ export default {
                 noteTodos: 'list',
                 noteImg: 'image',
                 noteVideo: 'video',
-            }
+            },
+            isEdit: false
         }
+    },
+    computed: {
+        routeLink(){
+            return this.isEdit ? '/keep' : '/keep/edit'
+        },
+        routeTxt() {
+            return this.isEdit ? 'Close' : 'Add note'
+        },
     }
 }

@@ -16,7 +16,10 @@ export default {
                 <option v-for="(value, name) in NoteTypes" :value="name">{{value}}</option>
             </select>
         </label>
-            <component :is="selectedType" class="note-to-add" :info="noteToEdit.info" :colorsList="colorsList" @send="sendMile" @update="saveNote" @delete="deleteNote"></component>
+            <component :is="selectedType" class="note-to-add" 
+            :info="noteToEdit.info" :colorsList="colorsList" 
+            @send="sendMile" @update="saveNote" @delete="deleteNote">
+            </component>
     </section>
     `,
     components: {

@@ -20,7 +20,6 @@ export default {
                 <button v-for="(value, name) in colorsList" :class="'color-btn-'+name" :data-name="value" @click="changeColor"></button>
             </div>
             <button title="Send as Email" class="btn" @click="sendMile"><i class="fa-solid fa-paper-plane"></i></button>
-            <router-link title="Close" to="/keep" class="btn"><i class="fa-solid fa-xmark"></i></router-link>
         </div>
     </section>
     `,
