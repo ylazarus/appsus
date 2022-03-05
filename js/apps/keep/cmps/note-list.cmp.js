@@ -5,7 +5,7 @@ import notePreview from "./note-preview.cmp.js"
 export default {
     template: `
     <section class="note-list">
-        <ul v-if="notesToShow" class="grid">
+        <ul v-if="notesToShow" class="all-cards-list">
             <li class="note-preview" v-for="note in notesToShow">
                 <note-preview :note="note" :key="note.id"/>
             </li>

@@ -1,3 +1,30 @@
+/* keepsus column count media queries
+@media (max-width: 500px){
+  .note-list .all-cards-list {
+    column-count: auto;
+    column-width: 225px;
+    padding-left: 0;
+   }
+}
+
+@media (min-width:500px){
+  .note-list .all-cards-list {
+    column-count: 2;
+    column-gap: 2rem;
+    padding-left: 0;
+    column-width: 225px;
+
+
+}
+
+@media (min-width: 960px){
+  .note-list .all-cards-list {
+    column-count: 3;
+    /* column-gap: 2rem; */
+
+
+
+
 @media (max-width: 640px) {
   .header-links {
     position: fixed;

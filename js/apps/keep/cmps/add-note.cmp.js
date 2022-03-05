@@ -68,7 +68,7 @@ export default {
                 this.noteToEdit.typeNote = this.selectedType
                 this.noteToEdit.info[this.NoteTypes[this.selectedType]] = this.NoteTypes[this.selectedType] + ''
                 if (this.selectedType === 'noteTodos') {
-                    this.noteToEdit.info.list = [{ txt: 'wat todo?', isDone: false, idx: 0 }]
+                    this.noteToEdit.info.list = [{ txt: 'What Needs To Be Done?', isDone: false, idx: 0 }]
                 }
             }
             this.noteToEdit.info.isUpdateMode = true
