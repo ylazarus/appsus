@@ -2,13 +2,13 @@
   background-color: var(--theme);
 }
 
-.hamburger-menu{
-    margin-right: 2rem;
+.hamburger-menu {
+  margin-right: 2rem;
 }
 
-.close-menu{
-    width: 2.5rem;
-    align-self: end;
+.close-menu {
+  width: 2.5rem;
+  align-self: end;
 }
 
 .app-header {
@@ -24,7 +24,6 @@
 .appsus-link:hover {
   background-color: var(--hover);
 }
-
 
 .header-links > *:hover {
   background-color: var(--hover);

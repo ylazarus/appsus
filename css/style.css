@@ -1,20 +1,19 @@
+@import "./parts/base.css";
+@import "./parts/vars.css";
+@import "./parts/fonts.css";
+@import "./parts/helpers.css";
 
-@import './parts/base.css';
-@import './parts/vars.css';
-@import './parts/fonts.css';
-@import './parts/helpers.css';
+@import "./cmps/app-home.css";
+@import "./cmps/user-msg.css";
+@import "./cmps/header.css";
+@import "./cmps/footer.css";
+@import "./cmps/app-about.css";
 
-@import './cmps/app-home.css';
-@import './cmps/user-msg.css';
-@import './cmps/header.css';
-@import './cmps/footer.css';
-@import './cmps/app-about.css';
+@import "./apps/keep/note-index.css";
+@import "./apps/keep/note-list.css";
 
-@import './apps/keep/note-index.css';
-@import './apps/keep/note-list.css';
+@import "./apps/mail/mail-index.css";
+@import "./apps/mail/mail-view.css";
+@import "./apps/mail/mail-compose.css";
 
-@import './apps/mail/mail-index.css';
-@import './apps/mail/mail-view.css';
-@import './apps/mail/mail-compose.css';
-
-@import './parts/mq.css';
+@import "./parts/mq.css";

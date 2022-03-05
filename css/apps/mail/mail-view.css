@@ -1,20 +1,20 @@
-.mail-display-card .btn{
-    margin: .25em
+.mail-display-card .btn {
+  margin: 0.25em;
 }
 
-.mail-title{
-    text-align: center;
+.mail-title {
+  text-align: center;
 }
 
-.mail-txt{
-    height: 30vh;
+.mail-txt {
+  height: 30vh;
 }
 
 .first-buttons-row {
-    justify-content: center;
-    width: 100%;
+  justify-content: center;
+  width: 100%;
 }
 .second-buttons-row {
-    justify-content: center;
-    width: 100%;
+  justify-content: center;
+  width: 100%;
 }
