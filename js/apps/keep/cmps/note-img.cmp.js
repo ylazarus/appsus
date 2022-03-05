@@ -38,7 +38,7 @@ export default {
         isEditable() {
             return this.info.isUpdateMode
         },
-        backGroundColor(){
+        backGroundColor() {
             return `background-color: ${this.style.backGroundColor}`
         }
     },

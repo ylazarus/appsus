@@ -1,4 +1,4 @@
-export default{
+export default {
     template: `
     <main class="app-home main-layout flex">
         <h1>Welcome To Appsus!</h1>

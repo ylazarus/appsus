@@ -13,10 +13,10 @@ const options = {
             <app-footer />
         </section>
     `,
-    components:{
-       appHeader,
-       appFooter,
-       userMsg
+    components: {
+        appHeader,
+        appFooter,
+        userMsg
     }
 };
 

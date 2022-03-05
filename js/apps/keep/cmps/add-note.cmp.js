@@ -79,20 +79,18 @@ export default {
         saveNote(info, send) {
             this.noteToEdit.info = info
             if (this.noteToEdit.id) {
-                console.log('update');
                 notesService.update({ ...this.noteToEdit })
                     .then((note) => {
                         eventBus.emit('updateList')
                         eventBus.emit("show-msg", { txt: "Update successfully" })
                         return note
-                        // this.$forceUpdate()
 
                     })
-                .then((note) => {
-                    if (!send){
-                        this.$router.push('/keep')
-                    } else this.$router.push('/compose/'+note.id)
-                 })
+                    .then((note) => {
+                        if (!send) {
+                            this.$router.push('/keep')
+                        } else this.$router.push('/compose/' + note.id)
+                    })
 
             } else {
                 notesService.save({ ...this.noteToEdit })
@@ -116,7 +114,6 @@ export default {
 
                 return
             }
-            console.log('delete');
             notesService.remove(this.noteToEdit.id)
                 .then((note) => {
                     eventBus.emit('updateList')
@@ -125,17 +122,4 @@ export default {
 
         }
     },
-    watch: {
-        isUpdate() {
-            console.log(this.isUpdate);
-            console.log(this.selectedType);
-            console.log(this.noteToEdit);
-        },
-        // noteToEdit : {
-        //     handler() {
-
-        //     },
-        //     deep: true
-        // }
-    }
 }

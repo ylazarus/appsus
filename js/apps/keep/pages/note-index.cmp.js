@@ -34,7 +34,7 @@ export default {
         }
     },
     computed: {
-        routeLink(){
+        routeLink() {
             return this.isEdit ? '/keep' : '/keep/edit'
         },
         routeTxt() {

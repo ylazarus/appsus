@@ -68,6 +68,6 @@ export default {
         this.$router.push("/mail")
       })
     },
-    reply() {},
+    reply() { },
   },
 }

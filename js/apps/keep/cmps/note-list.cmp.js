@@ -24,16 +24,14 @@ export default {
     },
     created() {
         this.getNotes()
-        this.unsubscribe1 = eventBus.on('updateList',(()=>{
+        this.unsubscribe1 = eventBus.on('updateList', (() => {
             this.getNotes()
-            // this.$forceUpdate()
 
-        }) )
+        }))
         this.unsubscribe2 = eventBus.on('setFilter', this.setFilter)
     },
     methods: {
         getNotes() {
-            console.log('query');
             notesService.query()
                 .then(notes => { this.notes = notes })
         },
@@ -53,7 +51,6 @@ export default {
         }
     },
     unmounted() {
-        console.log('unmounted');
         this.unsubscribe1();
         this.unsubscribe2();
     }

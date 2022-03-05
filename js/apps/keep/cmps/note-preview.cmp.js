@@ -3,7 +3,7 @@ import noteTodos from "./note-todos.cmp.js"
 import noteImg from "./note-img.cmp.js"
 import noteVideo from "./note-video.cmp.js"
 
-export default{
+export default {
     props: ['note'],
     template: `
         <component :is="note.typeNote" :info="note.info"  :id="note.id" @click="updateNote(note.id)"></component>
@@ -14,17 +14,12 @@ export default{
         noteImg,
         noteVideo,
     },
-    data() {
-        return {
-            // note: this.note
-        }
-    },
     created() {
     },
     methods: {
-        updateNote(id){
+        updateNote(id) {
             this.$router.push(`/keep/edit/${id}`)
             window.scrollTo(0, 230)
-        } 
+        }
     }
 }

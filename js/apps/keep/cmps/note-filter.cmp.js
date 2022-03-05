@@ -26,11 +26,10 @@ export default {
         }
     },
     methods: {
-        setFilter(){
-            console.log(this.filterBy);
+        setFilter() {
             eventBus.emit('setFilter', this.filterBy)
         },
-        resetFilter(){
+        resetFilter() {
             this.filterBy.search = ''
             this.filterBy.type = ''
             this.setFilter()

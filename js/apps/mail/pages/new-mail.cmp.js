@@ -28,7 +28,6 @@ export default {
       mailService
         .get(id)
         .then((mail) => {
-          // this.tempMessage = mail
           this.message = mail
           this.message.isRead = true
           let wasFrom = this.message.from
@@ -46,7 +45,7 @@ export default {
               note.info.text ||
               note.info?.image ||
               note.info?.video ||
-              note.info?.list.map(todo=>todo.txt).join('\n') ||
+              note.info?.list.map(todo => todo.txt).join('\n') ||
               'not found'
             this.message.isRead = true
           })

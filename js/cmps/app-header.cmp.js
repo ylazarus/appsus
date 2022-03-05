@@ -1,4 +1,4 @@
-export default{
+export default {
     template: `
         <header class="header-container">
             <nav class="app-header main-layout flex space-between">
@@ -13,14 +13,14 @@ export default{
             </nav>
         </header>
     `,
-    data (){
-        return{
+    data() {
+        return {
             menuOpen: false
         }
     },
     computed: {
-        isMenuOpen(){
-            return {menuopen: this.menuOpen}
+        isMenuOpen() {
+            return { menuopen: this.menuOpen }
         }
     },
     watch: {

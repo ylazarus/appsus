@@ -6,7 +6,7 @@ const MAIL_KEY = "mailDB"
 _createMails()
 
 export const loggedinUser = {
-  
+
   mail: "user@appsus.com",
   fullname: "Jon Zacks",
 }
@@ -34,7 +34,7 @@ function get(mailId) {
   })
 }
 
-function send(mail){
+function send(mail) {
   mail.sentAt = Date.now()
   return storageService.post(MAIL_KEY, mail)
 }
@@ -56,7 +56,6 @@ function _setNextPrevMailId(mail) {
 
 function getDraft() {
   return {
-    // id: storageService._makeId(),
     subject: '',
     txt: '',
     isRead: true,
@@ -180,7 +179,7 @@ function _createMails() {
         from: 'myshul@shul.il',
         fullname: 'Bet Knesset'
       },
-      
+
       {
         id: storageService._makeId(),
         subject: "Re: Happy Birthday",

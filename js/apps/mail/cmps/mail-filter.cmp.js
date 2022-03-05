@@ -1,5 +1,5 @@
 export default {
-    template: `
+  template: `
     <section class="search-options flex flex-column">
       <div class="search-bar">
         <input class="mail-search" v-model="filterBy.txt" title="Search Mail" type="text" placeholder="Search Mail">
@@ -15,23 +15,23 @@ export default {
       </div>
       </section>
       `,
-    data() {
-      return {
-        filterBy: {
-          txt: '',
-          readUnread: ['read', 'unread'],
-          
-        },
-        sortBy: 'createdDate'
-      }
-    },
-    methods: {
-      setFilter() {
-        this.$emit("filtered", { ...this.filterBy })
-      },
-      setSort(){
-        this.$emit("sorted", this.sortBy)
+  data() {
+    return {
+      filterBy: {
+        txt: '',
+        readUnread: ['read', 'unread'],
 
-      }
+      },
+      sortBy: 'createdDate'
+    }
+  },
+  methods: {
+    setFilter() {
+      this.$emit("filtered", { ...this.filterBy })
     },
-  }
+    setSort() {
+      this.$emit("sorted", this.sortBy)
+
+    }
+  },
+}

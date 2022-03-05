@@ -11,39 +11,39 @@ import newMail from "./apps/mail/pages/new-mail.cmp.js"
 
 
 const routes = [
-    {
-      path: "/",
-      component: appHome
-    },
-    {
-      path: "/about",
-      component: appAbout,
-    },
-    {
-      path: "/mail",
-      component: mailIndex
-    },
-    {
-      path: "/mail/:mailId",
-      component: displayedMail
-    },
-    {
-      path: "/compose/:mailId?",
-      component: newMail
-    },
-    {
-      path: "/keep",
-      component: noteIndex,
-      children: [
-        {
-            path: 'edit/:noteId?',
-            component: addNote
-        }
+  {
+    path: "/",
+    component: appHome
+  },
+  {
+    path: "/about",
+    component: appAbout,
+  },
+  {
+    path: "/mail",
+    component: mailIndex
+  },
+  {
+    path: "/mail/:mailId",
+    component: displayedMail
+  },
+  {
+    path: "/compose/:mailId?",
+    component: newMail
+  },
+  {
+    path: "/keep",
+    component: noteIndex,
+    children: [
+      {
+        path: 'edit/:noteId?',
+        component: addNote
+      }
     ]
-    },
-  ]
-  
-  export const router = VueRouter.createRouter({
-      routes,
-      history: VueRouter.createWebHashHistory()
-  })
+  },
+]
+
+export const router = VueRouter.createRouter({
+  routes,
+  history: VueRouter.createWebHashHistory()
+})

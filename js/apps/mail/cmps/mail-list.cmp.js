@@ -1,6 +1,6 @@
 import mailPreview from "./mail-preview.cmp.js"
 
-export default{
+export default {
     props: ['mails'],
     template: `
         <section class="mail-list">
@@ -13,6 +13,6 @@ export default{
         mailPreview
     },
     methods: {
-       
+
     }
 }

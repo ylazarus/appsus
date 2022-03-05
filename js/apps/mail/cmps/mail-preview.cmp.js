@@ -10,7 +10,7 @@ export default {
     </router-link>
     `,
   methods: {
-    
+
   },
   computed: {
     sentAt() {

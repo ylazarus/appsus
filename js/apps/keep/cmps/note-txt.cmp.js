@@ -40,7 +40,6 @@ export default {
             this.isOpenColors = false
         },
         saveChange(ev) {
-            console.log(ev);
             this.info[ev.target.dataset.name] = ev.target.innerText
         },
         updateNotes() {

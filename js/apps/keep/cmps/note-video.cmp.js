@@ -1,4 +1,4 @@
-export default{
+export default {
     props: ['info', 'colorsList'],
     template: `
     <section class="note-video" :style="backGroundColor">
@@ -39,7 +39,7 @@ export default{
         isEditable() {
             return this.info.isUpdateMode
         },
-        backGroundColor(){
+        backGroundColor() {
             return `background-color: ${this.style.backGroundColor}`
         }
     },
