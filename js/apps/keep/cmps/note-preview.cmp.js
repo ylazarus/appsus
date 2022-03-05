@@ -24,7 +24,7 @@ export default{
     methods: {
         updateNote(id){
             this.$router.push(`/keep/edit/${id}`)
-            window.scrollTo(0, 0)
+            window.scrollTo(0, 230)
         } 
     }
 }

@@ -12,9 +12,9 @@ export default {
             </label>
             <div class="edit-buttons">
                 
-                <button class="btn" @click="deleteNote"><i class="fa-solid fa-trash-can"></i></button>
-                <button class="btn" @click="updateNotes"><i class="fa-solid fa-v"></i></button>
-                <button class="btn" @click="isOpenColors = !isOpenColors"><i class="fa-solid fa-palette"></i></button>
+                <button title="Delete" class="btn" @click="deleteNote"><i class="fa-solid fa-trash-can"></i></button>
+                <button title="Save" class="btn" @click="updateNotes"><i class="fa-solid fa-floppy-disk"></i></button>
+                <button title="Change Background Color" class="btn" @click="isOpenColors = !isOpenColors"><i class="fa-solid fa-palette"></i></button>
                 <div v-if="isOpenColors" class="colors">
                     <button v-for="(value, name) in colorsList" :class="'color-btn-'+name" :data-name="value" @click="changeColor"></button>
                 </div>
