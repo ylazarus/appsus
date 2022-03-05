@@ -8,7 +8,7 @@ _createMails()
 export const loggedinUser = {
   
   mail: "user@appsus.com",
-  fullname: "Mahatma Appsus",
+  fullname: "Jon Zacks",
 }
 
 export const mailService = {
@@ -61,7 +61,8 @@ function getDraft() {
     txt: '',
     isRead: true,
     to: '',
-    from: 'user@appsus.com'
+    from: 'user@appsus.com',
+    fullname: 'Jon Zacks'
   }
 }
 
@@ -71,39 +72,164 @@ function _createMails() {
     mails = [
       {
         id: storageService._makeId(),
-        subject: "Test Email 1 long subject",
-        txt: "This is test email 1, how are you today?",
+        subject: "Parking Ticket",
+        txt: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus hic consectetur sint non quas. Dolores cumque repellendus dolor, quae nam nostrum quasi laborum asperiores accusamus quisquam ad ea reiciendis soluta.',
         isRead: false,
         sentAt: Date.now() - 1000 * 60 * 60 * 24,
         to: "user@appsus.com",
-        from: "tester123456789@test.com"
+        from: 'jerusalemmuni@jem.il',
+        fullname: 'Jerusalem Municipality'
       },
       {
         id: storageService._makeId(),
-        subject: "Test Email 2",
-        txt: "This is test email 2, how are you today?",
+        subject: "Your financial report is way overdue",
+        txt: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus hic consectetur sint non quas. Dolores cumque repellendus dolor, quae nam nostrum quasi laborum asperiores accusamus quisquam ad ea reiciendis soluta.',
+        isRead: true,
+        sentAt: Date.now() - 1000 * 60 * 60 * 24,
+        to: "user@appsus.com",
+        from: 'boss@work.com',
+        fullname: 'Steve Romer'
+      },
+      {
+        id: storageService._makeId(),
+        subject: "Basketball onight?",
+        txt: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus hic consectetur sint non quas. Dolores cumque repellendus dolor, quae nam nostrum quasi laborum asperiores accusamus quisquam ad ea reiciendis soluta.',
+        isRead: true,
+        sentAt: Date.now() - 2 * 1000 * 60 * 60 * 24,
+        to: "user@appsus.com",
+        from: 'dave@yeger.com',
+        fullname: 'Dave Yeger'
+      },
+      {
+        id: storageService._makeId(),
+        subject: "Sale! 2 Days in Eilat Half Off!",
+        txt: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus hic consectetur sint non quas. Dolores cumque repellendus dolor, quae nam nostrum quasi laborum asperiores accusamus quisquam ad ea reiciendis soluta.',
         isRead: false,
         sentAt: Date.now() - 2 * 1000 * 60 * 60 * 24,
         to: "user@appsus.com",
-        from: "tester@test.com"
+        from: 'noreply@hilton.com',
+        fullname: 'Hilton Inc.'
       },
       {
         id: storageService._makeId(),
-        subject: "Test Email 3",
-        txt: "This is test email 3, how are you today?",
+        subject: "Hey what's up?",
+        txt: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus hic consectetur sint non quas. Dolores cumque repellendus dolor, quae nam nostrum quasi laborum asperiores accusamus quisquam ad ea reiciendis soluta.',
+        isRead: true,
+        sentAt: Date.now() - 2 * 1000 * 60 * 60 * 24,
+        to: "user@appsus.com",
+        from: 'friend@friend.com',
+        fullname: 'David Moeller'
+      },
+      {
+        id: storageService._makeId(),
+        subject: "Exciting News!",
+        txt: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus hic consectetur sint non quas. Dolores cumque repellendus dolor, quae nam nostrum quasi laborum asperiores accusamus quisquam ad ea reiciendis soluta.',
         isRead: false,
         sentAt: Date.now() - 3 * 1000 * 60 * 60 * 24,
         to: "user@appsus.com",
-        from: "tester@test.com"
+        from: 'random@random.com',
+        fullname: 'Tel Aviv Bounce House'
       },
       {
         id: storageService._makeId(),
-        subject: "This is a sent message",
-        txt: "This is test email 4, how are you today?",
+        subject: "Sorry I missed your birthday...",
+        txt: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus hic consectetur sint non quas. Dolores cumque repellendus dolor, quae nam nostrum quasi laborum asperiores accusamus quisquam ad ea reiciendis soluta.',
+        isRead: true,
+        sentAt: Date.now() - 4 * 1000 * 60 * 60 * 24,
+        to: "user@appsus.com",
+        from: 'dad@dad.com',
+        fullname: 'Dad'
+      },
+      {
+        id: storageService._makeId(),
+        subject: "Work assignment",
+        txt: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus hic consectetur sint non quas. Dolores cumque repellendus dolor, quae nam nostrum quasi laborum asperiores accusamus quisquam ad ea reiciendis soluta.',
+        isRead: false,
+        sentAt: Date.now() - 4 * 1000 * 60 * 60 * 24,
+        to: "user@appsus.com",
+        from: 'workfriend@jem.il',
+        fullname: 'Jack McNeil'
+      },
+      {
+        id: storageService._makeId(),
+        subject: "Yay! Happy Birthday!",
+        txt: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus hic consectetur sint non quas. Dolores cumque repellendus dolor, quae nam nostrum quasi laborum asperiores accusamus quisquam ad ea reiciendis soluta.',
+        isRead: true,
+        sentAt: Date.now() - 5 * 1000 * 60 * 60 * 24,
+        to: "user@appsus.com",
+        from: 'wife@wife.com',
+        fullname: 'My Beautiful Wife'
+      },
+      {
+        id: storageService._makeId(),
+        subject: "Happy Birthday!",
+        txt: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus hic consectetur sint non quas. Dolores cumque repellendus dolor, quae nam nostrum quasi laborum asperiores accusamus quisquam ad ea reiciendis soluta.',
+        isRead: true,
+        sentAt: Date.now() - 5 * 1000 * 60 * 60 * 24,
+        to: "user@appsus.com",
+        from: 'mom@mom.com',
+        fullname: 'Mom'
+      },
+      {
+        id: storageService._makeId(),
+        subject: "Shabbat Times",
+        txt: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus hic consectetur sint non quas. Dolores cumque repellendus dolor, quae nam nostrum quasi laborum asperiores accusamus quisquam ad ea reiciendis soluta.',
+        isRead: false,
+        sentAt: Date.now() - 5 * 1000 * 60 * 60 * 24,
+        to: "user@appsus.com",
+        from: 'myshul@shul.il',
+        fullname: 'Bet Knesset'
+      },
+      
+      {
+        id: storageService._makeId(),
+        subject: "Re: Happy Birthday",
+        txt: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus hic consectetur sint non quas. Dolores cumque repellendus dolor, quae nam nostrum quasi laborum asperiores accusamus quisquam ad ea reiciendis soluta.",
+        isRead: true,
+        sentAt: Date.now() - 1000 * 60 * 60 * 24,
+        to: "mom@mom.com",
+        from: "user@appsus.com",
+        fullname: 'Jon Zacks'
+      },
+      {
+        id: storageService._makeId(),
+        subject: "Can you come over tonight?",
+        txt: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus hic consectetur sint non quas. Dolores cumque repellendus dolor, quae nam nostrum quasi laborum asperiores accusamus quisquam ad ea reiciendis soluta.",
+        isRead: true,
+        sentAt: Date.now() - 2 * 1000 * 60 * 60 * 24,
+        to: "popo@popo.com",
+        from: "user@appsus.com",
+        fullname: 'Jon Zacks'
+      },
+      {
+        id: storageService._makeId(),
+        subject: "Looking for a babysitter urgently",
+        txt: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus hic consectetur sint non quas. Dolores cumque repellendus dolor, quae nam nostrum quasi laborum asperiores accusamus quisquam ad ea reiciendis soluta.",
+        isRead: true,
+        sentAt: Date.now() - 2 * 1000 * 60 * 60 * 24,
+        to: "momo@momo.com",
+        from: "user@appsus.com",
+        fullname: 'Jon Zacks'
+      },
+      {
+        id: storageService._makeId(),
+        subject: "no subject",
+        txt: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus hic consectetur sint non quas. Dolores cumque repellendus dolor, quae nam nostrum quasi laborum asperiores accusamus quisquam ad ea reiciendis soluta.",
         isRead: true,
         sentAt: Date.now() - 3 * 1000 * 60 * 60 * 24,
         to: "momo@momo.com",
-        from: "user@appsus.com"
+        from: "user@appsus.com",
+        fullname: 'Jon Zacks'
+      },
+      {
+        id: storageService._makeId(),
+        subject: "Thanks for your help",
+        txt: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus hic consectetur sint non quas. Dolores cumque repellendus dolor, quae nam nostrum quasi laborum asperiores accusamus quisquam ad ea reiciendis soluta.",
+        isRead: true,
+        sentAt: Date.now() - 3 * 1000 * 60 * 60 * 24,
+        to: "momo@momo.com",
+        from: "user@appsus.com",
+        fullname: 'Jon Zacks'
       },
     ]
   }

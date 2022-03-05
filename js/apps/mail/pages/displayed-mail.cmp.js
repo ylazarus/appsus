@@ -7,7 +7,7 @@ export default {
           <div class="mail-display-card page-as-card-layout flex flex-column">
 
             <h1>Subject: {{mail.subject}}</h1>
-            <h3>From: {{mail.from}}</h3>
+            <h3>From: {{mail.fullname}} <{{mail.from}}></h3>
             <p class="mail-txt">{{mail.txt}}</p>
               
             <div class="first-buttons-row flex ">
