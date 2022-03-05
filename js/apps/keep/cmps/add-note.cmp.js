@@ -99,6 +99,7 @@ export default {
                     .then((note) => {
                         eventBus.emit('updateList')
                         eventBus.emit("show-msg", { txt: "Save successfully" })
+                        this.$emit('saved')
                         this.$router.push('/keep')
                     })
 

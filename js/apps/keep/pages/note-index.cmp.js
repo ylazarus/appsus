@@ -8,8 +8,8 @@ export default {
             <h1 class="note-logo">Keepsus</h1>
             <note-filter :types="noteTypes"></note-filter>
         </header>
-        <router-link class="btn add-btn" :to="routeLink" @click="isEdit = !isEdit">{{routeTxt}}</router-link>
-        <router-view :types="noteTypes"></router-view>
+        <router-link class="btn add-btn" :to="routeLink" @click="switchLink">{{routeTxt}}</router-link>
+        <router-view :types="noteTypes" @saved="switchLink"></router-view>
         <note-list />
     </section>
     `,
@@ -26,6 +26,11 @@ export default {
                 noteVideo: 'video',
             },
             isEdit: false
+        }
+    },
+    methods: {
+        switchLink() {
+            this.isEdit = !this.isEdit
         }
     },
     computed: {
