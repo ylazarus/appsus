@@ -92,7 +92,7 @@ function _createMails() {
       },
       {
         id: storageService._makeId(),
-        subject: "Basketball onight?",
+        subject: "Basketball tonight?",
         txt: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus hic consectetur sint non quas. Dolores cumque repellendus dolor, quae nam nostrum quasi laborum asperiores accusamus quisquam ad ea reiciendis soluta.',
         isRead: true,
         sentAt: Date.now() - 2 * 1000 * 60 * 60 * 24,
