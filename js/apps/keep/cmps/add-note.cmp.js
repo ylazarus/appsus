@@ -17,7 +17,6 @@ export default {
             </select>
         </label>
             <component :is="selectedType" class="note-to-add" :info="noteToEdit.info" :colorsList="colorsList" @send="sendMile" @update="saveNote" @delete="deleteNote"></component>
-            <router-link title="Close" to="/keep" class="btn"><i class="fa-solid fa-square-xmark"></i></router-link>
     </section>
     `,
     components: {
