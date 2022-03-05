@@ -1,71 +1,52 @@
-
 .note-logo {
-    min-width: 10rem;
+  min-width: 10rem;
 }
-
-/* didn't erase, moved to mq though */
 
 .note-list .all-cards-list {
-    /* 
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 230px);
-    gap: 20px;
-    justify-content: center;
-    started adding from here, above this is what was: */
-    column-count: auto;
-    /* column-gap: 3rem; */
-    /* padding-left: 0; */
-    column-width: 225px;
-    padding: 0;
-    margin: 0 auto;
-    list-style: none;
-    text-align: center;
-    
+  column-count: auto;
+  column-width: 225px;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  text-align: center;
 }
 
-/* .note-todos ul{
-    padding-left: 0
-} */
+.note-todos ul {
+  padding-left: 0;
+}
 
-.note-list .note-preview{
-    /* height: fit-content; */
-    cursor: pointer;
-    /* added from here  */
-    width: 225px;
-    /* height: 300px; */
-    margin-bottom: 1rem;
-    -webkit-column-break-inside: avoid;
-    list-style-type: none;
-    display: inline-block
-    /* column-break-inside: avoid; */
-
+.note-list .note-preview {
+  cursor: pointer;
+  width: 225px;
+  margin-bottom: 1rem;
+  -webkit-column-break-inside: avoid;
+  list-style-type: none;
+  display: inline-block;
 }
-.note-list .note-preview section:hover{
-    box-shadow: 0px 0px 10px 0px #443d3a;
+.note-list .note-preview section:hover {
+  box-shadow: 0px 0px 10px 0px #443d3a;
 }
-.note-list .note-preview>*{
-    background-color: var(--bgc);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 0.5rem;
-
-    
+.note-list .note-preview > * {
+  background-color: var(--bgc);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.5rem;
 }
-.note-list img{
-    width: 80%;
+.note-list img {
+  width: 80%;
 }
-.note-list iframe{
-    width: 80%;
-    height: 50%;
+.note-list iframe {
+  width: 80%;
+  height: 50%;
 }
 
 .todo-line {
-    display: flex;
-    justify-content:baseline;
-    align-items: center;
-    width: 80%;
-    gap: 10px;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  width: 80%;
+  gap: 10px;
 }

@@ -1,32 +1,11 @@
 /* layout */
 
-/* .main-layout {
-  moved to MQ
-  max-width: 1200px;
-  width: 80vw;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-
-.page-as-card-layout {
-  background-color: var(--bgc);
-  max-width: 500px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0.5rem;
-  align-items: baseline;
-  border-radius: 0.33rem;
-  gap: 1rem;
-} */
-
 /* main-height */
 
 .main-height {
   min-height: 79vh;
   padding: 1rem;
 }
-
 
 /* flex */
 
@@ -45,12 +24,6 @@
 .flex.align-center {
   align-items: center;
 }
-
-/* grid */
-
-/* .grid {
-  display: grid;
-} */
 
 /* list */
 

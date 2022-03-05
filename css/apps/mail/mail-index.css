@@ -7,7 +7,7 @@
     background-color: var(--bgc);
     flex-grow: 1;
   }
-  .main-page-header{
+  .main-page-header {
     flex-direction: column;
     gap: 1rem;
   }
@@ -17,12 +17,12 @@
     margin-bottom: 2rem;
     margin-left: 0;
   }
-  .mail-nav{
+  .mail-nav {
     align-self: center;
   }
 }
 
-@media (min-width: 500px){
+@media (min-width: 500px) {
   .nav-mail-container {
     flex-direction: row;
     gap: 2rem;
@@ -31,7 +31,7 @@
     background-color: var(--bgc);
     flex-grow: 1;
   }
-  .main-page-header{
+  .main-page-header {
     flex-direction: row;
   }
   .search-options {
@@ -103,11 +103,6 @@
 .email-list {
   padding-right: 1rem;
 }
-
-/* .nav-mail-container {
-  margin-right: auto;
-  margin-left: auto;
-} */
 
 .read-inputs {
   gap: 1rem;
