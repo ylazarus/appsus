@@ -53,11 +53,35 @@ function _createNotes() {
         notes = [
             {
                 id: utilService.makeId(),
+                typeNote: 'noteTodos',
+                info: {
+        
+                    subject: 'To take care of urgently!',
+                    list: [{txt: 'Cut the grass', isDone: false, idx:0}, {txt: 'Hang pictures', isDone: true, idx:1}, {txt: 'Buy wife present', isDone: true, idx:2}, {txt: 'Pick up pizza', isDone: false, idx:3}, {txt: 'Paint the fence', isDone: false, idx:4}],
+                    style: {
+                        backGroundColor: '#ffff007a'
+                    },
+                },
+            },
+            {
+                id: utilService.makeId(),
                 typeNote: 'noteTxt',
                 info: {
         
-                    subject: 'aaa aaa',
-                    text: 'aaa aaa aaa aaa aaa aaa aaa aaa aaa',
+                    subject: 'Reminder To Self',
+                    text: 'Call Mom and Dad for their Anniversary',
+                    style: {
+                        backGroundColor: '#ffffff'
+                    },
+                },
+            },
+            {
+                id: utilService.makeId(),
+                typeNote: 'noteVideo',
+                info: {
+        
+                    subject: 'Funny as hell, I love this guy',
+                    video: 'https://www.youtube.com/embed/nUUsUAPEjFc',
                     style: {
                         backGroundColor: '#ffffff'
                     },
@@ -67,8 +91,8 @@ function _createNotes() {
                 id: utilService.makeId(),
                 typeNote: 'noteTxt',
                 info: {
-                    subject: 'bbb bbb',
-                    text: 'bb bbb bbbb bbb bbb',
+                    subject: 'To tell David',
+                    text: 'Please make sure to submit the forms before noon tomorrow',
                     style: {
                         backGroundColor: '#ffff007a'
                     },
@@ -79,7 +103,7 @@ function _createNotes() {
                 typeNote: 'noteImg',
                 info: {
         
-                    subject: 'img a',
+                    subject: 'Amazing book, must read again!',
                     image: 'http://coding-academy.org/books-photos/20.jpg',
                     style: {
                         backGroundColor: '#ffffff'
@@ -88,9 +112,55 @@ function _createNotes() {
             },
             {
                 id: utilService.makeId(),
+                typeNote: 'noteTxt',
+                info: {
+                    subject: 'Important!!!',
+                    text: 'Book a reservation at the wine tasting before it gets completely sold out!',
+                    style: {
+                        backGroundColor: '#ffff007a'
+                    },
+                },
+            },
+            {
+                id: utilService.makeId(),
+                typeNote: 'noteTodos',
+                info: {
+        
+                    subject: 'To get from the Hardware store',
+                    list: [{txt: 'Hammer', isDone: false, idx:0}, {txt: 'Nails', isDone: false, idx:1}, {txt: 'Saw', isDone: false, idx:2}, {txt: 'Screws', isDone: false, idx:3}, {txt: 'Sledgehammer', isDone: false, idx:4}],
+                    style: {
+                        backGroundColor: '#ffff007a'
+                    },
+                },
+            },
+            {
+                id: utilService.makeId(),
+                typeNote: 'noteVideo',
+                info: {
+        
+                    subject: 'Great playlist for working on the computer',
+                    video: 'https://www.youtube.com/embed/pzzpjkHpI5A',
+                    style: {
+                        backGroundColor: '#ffffff'
+                    },
+                },
+            },
+            {
+                id: utilService.makeId(),
+                typeNote: 'noteTxt',
+                info: {
+                    subject: 'Homework',
+                    text: 'Read pages 117-130 and summarize in 2-3 paragraphs',
+                    style: {
+                        backGroundColor: '#ffff007a'
+                    },
+                },
+            },
+            {
+                id: utilService.makeId(),
                 typeNote: 'noteImg',
                 info: {
-                    subject: 'img b',
+                    subject: 'Book club book of the week',
                     image: 'http://coding-academy.org/books-photos/14.jpg',
                     style: {
                         backGroundColor: '#ffffff'
@@ -103,7 +173,7 @@ function _createNotes() {
                 typeNote: 'noteVideo',
                 info: {
         
-                    subject: 'video a',
+                    subject: 'Watch later, no time right now',
                     video: 'https://www.youtube.com/embed/tgbNymZ7vqY',
                     style: {
                         backGroundColor: '#ffffff'
@@ -115,8 +185,8 @@ function _createNotes() {
                 typeNote: 'noteTodos',
                 info: {
         
-                    subject: 'todos a',
-                    list: [{txt: 'aaa', isDone: false, idx:0}, {txt: 'bbb', isDone: true, idx:1}, {txt: 'ccc', isDone: false, idx:2}],
+                    subject: 'Shopping List',
+                    list: [{txt: 'Cucumbers', isDone: false, idx:0}, {txt: 'Tomatoes', isDone: false, idx:1}, {txt: 'Bread', isDone: false, idx:2}, {txt: 'Cheese', isDone: false, idx:3}, {txt: 'Beer', isDone: false, idx:4}],
                     style: {
                         backGroundColor: '#ffff007a'
                     },
